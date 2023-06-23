@@ -1,30 +1,104 @@
                                                     /*login page*/
 
-const formOpenBtn = document.querySelector("#form-open"),
-  home = document.querySelector(".home"),
-  formContainer = document.querySelector(".form_container"),
-  formCloseBtn = document.querySelector(".form_close"),
-  loginBtn = document.querySelector("#login"),
-  pwShowHide = document.querySelectorAll(".pw_hide");
-
-formOpenBtn.addEventListener("click", () => home.classList.add("show"));
-formCloseBtn.addEventListener("click", () => home.classList.remove("show"));
+const pwShowHide = document.querySelectorAll(".pw_hide");
 
 pwShowHide.forEach((icon) => {
-  icon.addEventListener("click", () => {
-    let getPwInput = icon.parentElement.querySelector("input");
-    if (getPwInput.type === "password") {
-      getPwInput.type = "text";
-      icon.classList.replace("uil-eye-slash", "uil-eye");
-    } else {
-      getPwInput.type = "password";
-      icon.classList.replace("uil-eye", "uil-eye-slash");
-    }
-  });
+icon.addEventListener("click", () => {
+  let getPwInput = icon.parentElement.querySelector("input");
+  if (getPwInput.type === "password") {
+    getPwInput.type = "text";
+    icon.classList.replace("uil-eye-slash", "uil-eye");
+  } else {
+    getPwInput.type = "password";
+    icon.classList.replace("uil-eye", "uil-eye-slash");
+  }
+});
 });
 
 
-loginBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  formContainer.classList.remove("active");
+
+
+                                                  /*second page js*/
+const menu1=document.querySelectorAll('.sem');
+menu1.forEach(sem=>{
+    const select=sem.querySelector('.select');
+    const symbol=sem.querySelector('.symbol');
+    const drop=sem.querySelector('.drop');
+    const option=sem.querySelectorAll('.drop li');
+    const highlighted=sem.querySelector('.highlight');
+
+    select.addEventListener('click',()=>{
+        select.classList.toggle('select-clicked');
+        symbol.classList.toggle('symbol-rotate');
+        drop.classList.toggle('drop-open');
+    });
+
+    option.forEach(options=>{
+        options.addEventListener('click',()=>{
+            highlighted.innerText=options.innerText;
+            select.classList.remove('select-clicked');
+            symbol.classList.remove('symbol-rotate');
+            drop.classList.remove('drop-open');
+            option.forEach(options => {
+                options.classList.remove('active');
+            });
+            options.classList.add('active');
+        });
+    });
+});
+
+const menu2=document.querySelectorAll('.branch');
+menu2.forEach(branch=>{
+    const select=branch.querySelector('.select');
+    const symbol=branch.querySelector('.symbol');
+    const drop=branch.querySelector('.drop');
+    const option=branch.querySelectorAll('.drop li');
+    const highlighted=branch.querySelector('.highlight');
+
+    select.addEventListener('click',()=>{
+        select.classList.toggle('select-clicked');
+        symbol.classList.toggle('symbol-rotate');
+        drop.classList.toggle('drop-open');
+    });
+
+    option.forEach(options=>{
+        options.addEventListener('click',()=>{
+            highlighted.innerText=options.innerText;
+            select.classList.remove('select-clicked');
+            symbol.classList.remove('symbol-rotate');
+            drop.classList.remove('drop-open');
+            option.forEach(options => {
+                options.classList.remove('active');
+            });
+            options.classList.add('active');
+        });
+    });
+});
+
+const menu3=document.querySelectorAll('.pastyear');
+menu3.forEach(pastyear=>{
+    const select=pastyear.querySelector('.select');
+    const symbol=pastyear.querySelector('.symbol');
+    const drop=pastyear.querySelector('.drop');
+    const option=pastyear.querySelectorAll('.drop li');
+    const highlighted=pastyear.querySelector('.highlight');
+
+    select.addEventListener('click',()=>{
+        select.classList.toggle('select-clicked');
+        symbol.classList.toggle('symbol-rotate');
+        drop.classList.toggle('drop-open');
+    });
+
+    option.forEach(options=>{
+        options.addEventListener('click',()=>{
+            highlighted.innerText=options.innerText;
+            select.classList.remove('select-clicked');
+            symbol.classList.remove('symbol-rotate');
+            drop.classList.remove('drop-open');
+            option.forEach(options => {
+                options.classList.remove('active');
+            });
+            options.classList.add('active');
+        });
+    });
 });
