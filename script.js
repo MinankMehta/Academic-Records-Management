@@ -102,3 +102,29 @@ menu3.forEach(pastyear=>{
         });
     });
 });
+
+function ValidationForm() {
+    let password = document.forms["Logform"]["password"];
+    let email = document.forms["Logform"]["emailId"];
+    if(password.value == "") {
+      alert("Please enter your password.");
+      fname.focus();
+      return false;
+    }
+    if(email.value == "") {
+      alert("Please enter a valid e-mail address.");
+      email.focus();
+      return false;
+    }
+    if(email.value.indexOf("@", 0) < 0) {
+      alert("Please enter a valid e-mail address.");
+      email.focus();
+      return false;
+    }
+    if(email.value.indexOf(".", 0) < 0) {
+      alert("Please enter a valid e-mail address.");
+      email.focus();
+      return false;
+    }
+    return true;
+  }
