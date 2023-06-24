@@ -1,3 +1,11 @@
+<?php
+// all required variables defined here
+session_start(); // start the session
+session_unset();// unset all session variables
+session_destroy();
+		
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,14 +72,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Valid credentials
         $row = $result->fetch_assoc();
         $userType = $row['Type'];
-
+	$_SESSION['type'] = $userType;
+                 
+        $_SESSION['loggedin'] = true;
+                
         // Perform actions based on user type (student, teacher, admin)
         if ($userType === 'student') {
             // Student login logic
-		echo "Correct Student.";
+		echo '<script>window.location.href = "secondpage(gateway_pg).php";</script>';
         } elseif ($userType === 'teacher') {
             // Teacher login logic
-		echo "Correct Teacher.";
+		echo '<script>window.location.href = "secondpage(gateway_pg).php";</script>';
         } elseif ($userType === 'admin') {
             // Admin login logic
 		echo "Correct Admin.";
