@@ -204,7 +204,8 @@ color:#ffffff;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin:7% 10%;
+    margin:12% 10%;
+    margin-bottom:7.3%;
 }
 
 .highlight{
@@ -249,7 +250,7 @@ color:#ffffff;
 }
 
 .select:hover{
-    background:rgb(166, 0, 0);
+    background:#b7202e;
     color:#ffffff;
     box-shadow: 0 0 0.8em #26489a;
 }
@@ -271,7 +272,7 @@ color:#ffffff;
 .drop{
     list-style: none;
     padding:0.2em 0.5em;
-    background:rgb(166, 0, 0);
+    background:#b7202e;
     /* border:1px #363a43 solid; */
     box-shadow: 0 0 0.8em #26489a;
     /* box-shadow: 0 0.5em 1em rgba(0,0,0,0.2); */
@@ -286,10 +287,13 @@ color:#ffffff;
     display:none;
     transition:0.2s;
     z-index:1;
+    height:auto;
+    max-height: 123px;
+    overflow-x: hidden;
 }
 
 .drop li{
-    padding:0.7em 0.5em;
+    padding:0.6em 0.5em;
     margin: 0.3em 0;
     border-radius:0.5em;
     cursor:pointer;
@@ -334,8 +338,10 @@ color:#ffffff;
 }
 
 .enterbtn:hover{
-    background-color: red;
+    background-color: #b7202e;
     color:#ffffff;
+    transition: 0.3s;
+    box-shadow: 0 0 0.8em #26489a;
     transition: 0.3s;
     box-shadow: 0 0 0.8em #26489a;
 }
