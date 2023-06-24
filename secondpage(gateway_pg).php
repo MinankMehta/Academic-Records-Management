@@ -10,8 +10,17 @@ session_start();
         <title>Gateway</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+	<style>
+		input[type="radio"] {
+  		position: absolute;
+  		opacity: 0;
+  		width: 0;
+  		height: 0;
+		}
+	</style>
     </head>
     <body class="img">
+        <form method="post" action="process.php">
         <div class="main">
             <div class="sem">
                 <div class="select">
@@ -19,12 +28,12 @@ session_start();
                     <div class="symbol"></div>
                 </div>
                 <ul class="drop">
-                    <li>SEM I</li>
-                    <li>SEM II</li>
-                    <li>SEM III</li>
-                    <li>SEM IV</li>
-                    <li>SEM V</li>
-                    <li>SEM VI</li>
+                    <li><input type="radio" name="semester" value="SEM I">SEM I</li>
+                    <li><input type="radio" name="semester" value="SEM II">SEM II</li>
+                    <li><input type="radio" name="semester" value="SEM III">SEM III</li>
+                    <li><input type="radio" name="semester" value="SEM IV">SEM IV</li>
+                    <li><input type="radio" name="semester" value="SEM V">SEM V</li>
+                    <li><input type="radio" name="semester" value="SEM VI">SEM VI</li>
                 </ul>
             </div>
             <div class="pastyear">
@@ -33,10 +42,10 @@ session_start();
                     <div class="symbol"></div>
                 </div>
                 <ul class="drop">
-                    <li>2023</li>
-                    <li>2022</li>
-                    <li>2021</li>
-                    <li>2020</li>
+                    <li><input type="radio" name="year" value="2023">2023</li>
+                    <li><input type="radio" name="year" value="2022">2022</li>
+                    <li><input type="radio" name="year" value="2021">2021</li>
+                    <li><input type="radio" name="year" value="2020">2020</li>
                 </ul>
             </div>
             <div class="branch">
@@ -45,16 +54,17 @@ session_start();
                     <div class="symbol"></div>
                 </div>
                 <ul class="drop">
-                    <li>COMPS</li>
-                    <li>IT</li>
-                    <li>EXTC</li>
-                    <li>ETRX</li>
-                    <li>MECH</li>
-                    <li>EXCP</li>
+                    <li><input type="radio" name="branch" value="COMPS">COMPS</li>
+                    <li><input type="radio" name="branch" value="IT">IT</li>
+                    <li><input type="radio" name="branch" value="EXTC">EXTC</li>
+                    <li><input type="radio" name="branch" value="ETRX">ETRX</li>
+                    <li><input type="radio" name="branch" value="MECH">MECH</li>
+                    <li><input type="radio" name="branch" value="EXCP">EXCP</li>
                 </ul>
             </div>   
         </div>
-        <button class="enterbtn">Enter</button>
+        <button type="submit" class="enterbtn">Enter</button>
+    </form>
 
         <footer>
             <div class="logo"><!--2 clg logos-->
@@ -75,4 +85,21 @@ session_start();
         <script src="script.js"></script>
         
     </body>
+<php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Retrieve the selected values from the form
+    $semester = $_POST["semester"];
+    $year = $_POST["year"];
+    $branch = $_POST["branch"];
+
+    // Store the values in session variables
+    $_SESSION["semester"] = $semester;
+    $_SESSION["year"] = $year;
+    $_SESSION["branch"] = $branch;
+
+    
+}
+?>
+
+
 </html>
