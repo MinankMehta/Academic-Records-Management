@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2023 at 02:35 PM
+-- Generation Time: Jun 24, 2023 at 06:54 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -22,6 +22,19 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `academic_records` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `academic_records`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subjectdata`
+--
+
+CREATE TABLE `subjectdata` (
+  `Semester` int(11) DEFAULT NULL,
+  `Branch` varchar(50) DEFAULT NULL,
+  `Subject` varchar(50) DEFAULT NULL,
+  `Year` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
