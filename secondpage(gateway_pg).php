@@ -20,7 +20,7 @@ session_start();
 	</style>
     </head>
     <body class="img">
-        <form method="post" action="process.php">
+        <form method="post" action="#">
         <div class="main">
             <div class="sem">
                 <div class="select">
