@@ -34,28 +34,6 @@
                 <button class="loginbtn" type="submit">Login Now</button>
             </form>
         </div>
-    </div>
-</section>
-    
-    <footer>
-        <div class="logo"><!--2 clg logos-->
-            <img src="svu_kjsce.jpg" alt="SVU-KJSCE" class="logo1">
-            <img src="somaiya_trust.png" alt="Somaiya-trust" class="logo2">
-        </div>
-        <div class="footer1">.<!--don't remove this dot/fullstop--></div><!--light red small rectangle-->
-        <div class="footer2"><!--dark red big rectangle with 5 social media icons-->
-            <div class="social">
-                <a href="https://www.facebook.com/pages/Somaiya-Vidyavihar/122977847737512/" target="_blank"><span class="fab fa-facebook-f"></span></a>
-                <a href="https://twitter.com/Somaiya_SVU/" target="_blank"><span class="fab fa-twitter"></span></a>
-                <a href="https://instagram.com/somaiyatrust/" target="_blank"><span class="fab fa-instagram"></span></a>
-                <a href="http://www.youtube.com/somaiyavidyavihar/" target="_blank"><span class="fab fa-youtube"></span></a>
-                <a href="https://www.linkedin.com/school/somaiya-vidyavihar-university/" target="_blank"><span class="fab fa-linkedin"></span></a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="#"></script>
-</body>
 <?php
 // Assuming you have your database credentials
 $servername = "localhost";
@@ -90,10 +68,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Perform actions based on user type (student, teacher, admin)
         if ($userType === 'student') {
             // Student login logic
+		echo "Correct Student.";
         } elseif ($userType === 'teacher') {
             // Teacher login logic
+		echo "Correct Teacher.";
         } elseif ($userType === 'admin') {
             // Admin login logic
+		echo "Correct Admin.";
         }
     } else {
         // Invalid credentials
@@ -104,4 +85,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn->close();
 }
 ?>
+    </div>
+</section>
+    
+    <footer>
+        <div class="logo"><!--2 clg logos-->
+            <img src="svu_kjsce.jpg" alt="SVU-KJSCE" class="logo1">
+            <img src="somaiya_trust.png" alt="Somaiya-trust" class="logo2">
+        </div>
+        <div class="footer1">.<!--don't remove this dot/fullstop--></div><!--light red small rectangle-->
+        <div class="footer2"><!--dark red big rectangle with 5 social media icons-->
+            <div class="social">
+                <a href="https://www.facebook.com/pages/Somaiya-Vidyavihar/122977847737512/" target="_blank"><span class="fab fa-facebook-f"></span></a>
+                <a href="https://twitter.com/Somaiya_SVU/" target="_blank"><span class="fab fa-twitter"></span></a>
+                <a href="https://instagram.com/somaiyatrust/" target="_blank"><span class="fab fa-instagram"></span></a>
+                <a href="http://www.youtube.com/somaiyavidyavihar/" target="_blank"><span class="fab fa-youtube"></span></a>
+                <a href="https://www.linkedin.com/school/somaiya-vidyavihar-university/" target="_blank"><span class="fab fa-linkedin"></span></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="#"></script>
+</body>
+
 </html>
