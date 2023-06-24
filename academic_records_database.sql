@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2023 at 01:34 PM
+-- Generation Time: Jun 24, 2023 at 02:35 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `academic_records`
 --
+CREATE DATABASE IF NOT EXISTS `academic_records` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `academic_records`;
 
 -- --------------------------------------------------------
 
