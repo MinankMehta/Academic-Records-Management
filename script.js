@@ -137,14 +137,14 @@ function ValidationForm() {
         semester.focus();
         return false;
     }
-    if(branch.value == "") {
-        alert("Please choose the branch");
-        branch.focus();
-        return false;
-    }
     if(year.value == "") {
         alert("Please choose the year");
         year.focus();
+        return false;
+    }
+    if(branch.value == "") {
+        alert("Please choose the branch");
+        branch.focus();
         return false;
     }
 }
