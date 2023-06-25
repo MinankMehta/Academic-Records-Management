@@ -33,7 +33,7 @@ session_start();
 </style>
     </head>
     <body class="img">
-       <form method="post">
+       <form method="post" name="gateway" onsubmit="return ValidationForm2()">
     <div class="main">
         <div class="sem">
             <div class="select">
@@ -190,8 +190,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $_SESSION["year"] = $year;
     $_SESSION["branch"] = $branch;
 
-	
-    
 }
 ?>
 
