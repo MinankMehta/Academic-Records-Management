@@ -128,3 +128,37 @@ function ValidationForm() {
     }
     return true;
   }
+  function ValidationForm2() {
+    let semester = document.forms["gateway"]["semester"];
+    let branch = document.forms["gateway"]["branch"];
+    let year = document.forms["gateway"]["year"];
+    if(semester.value == "") {
+        alert("Please choose the semester");
+        semester.focus();
+        return false;
+    }
+    if(branch.value == "") {
+        alert("Please choose the branch");
+        branch.focus();
+        return false;
+    }
+    if(year.value == "") {
+        alert("Please choose the year");
+        year.focus();
+        return false;
+    }
+}
+
+
+/*
+function ValidationForm2(){
+    let semester = document.querySelectorAll('input[name="semester"]:checked').length;
+    if(semester>0) {
+        alert("Yes");
+        }
+    else{
+        alert(semester);
+        return false;
+        }
+        return true;
+    }*/
