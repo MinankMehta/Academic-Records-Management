@@ -10,54 +10,154 @@ session_start();
         <title>Gateway</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-	
+	<style>
+		.drop li {
+    padding: 0.6em 0.5em;
+    margin: 0.3em 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+    font-family: 'Fira sans';
+    font-size: 15px;
+    position: relative;
+}
+
+.drop li input[type="radio"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+</style>
     </head>
     <body class="img">
-        <form method="post" >
-        <div class="main">
-            <div class="sem">
-                <div class="select">
-                    <span class="highlight">Semester</span>
-                    <div class="symbol"></div>
-                </div>
-                <ul class="drop">
-                    <li><input type="radio" name="semester" value="SEM I">SEM I</li>
-                    <li><input type="radio" name="semester" value="SEM II">SEM II</li>
-                    <li><input type="radio" name="semester" value="SEM III">SEM III</li>
-                    <li><input type="radio" name="semester" value="SEM IV">SEM IV</li>
-                    <li><input type="radio" name="semester" value="SEM V">SEM V</li>
-                    <li><input type="radio" name="semester" value="SEM VI">SEM VI</li>
-                </ul>
+       <form method="post">
+    <div class="main">
+        <div class="sem">
+            <div class="select">
+                <span class="highlight">Semester</span>
+                <div class="symbol"></div>
             </div>
-            <div class="pastyear">
-                <div class="select">
-                    <span class="highlight">Year</span>
-                    <div class="symbol"></div>
-                </div>
-                <ul class="drop">
-                    <li><input type="radio" name="year" value="2023">2023</li>
-                    <li><input type="radio" name="year" value="2022">2022</li>
-                    <li><input type="radio" name="year" value="2021">2021</li>
-                    <li><input type="radio" name="year" value="2020">2020</li>
-                </ul>
-            </div>
-            <div class="branch">
-                <div class="select">
-                    <span class="highlight">Branch</span>
-                    <div class="symbol"></div>
-                </div>
-                <ul class="drop">
-                    <li><input type="radio" name="branch" value="COMPS">COMPS</li>
-                    <li><input type="radio" name="branch" value="IT">IT</li>
-                    <li><input type="radio" name="branch" value="EXTC">EXTC</li>
-                    <li><input type="radio" name="branch" value="ETRX">ETRX</li>
-                    <li><input type="radio" name="branch" value="MECH">MECH</li>
-                    <li><input type="radio" name="branch" value="EXCP">EXCP</li>
-                </ul>
-            </div>   
+            <ul class="drop">
+                <li>
+                    <label>
+                        <input type="radio" name="semester" value="SEM I">
+                        <span>SEM I</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="semester" value="SEM II">
+                        <span>SEM II</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="semester" value="SEM III">
+                        <span>SEM III</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="semester" value="SEM IV">
+                        <span>SEM IV</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="semester" value="SEM V">
+                        <span>SEM V</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="semester" value="SEM VI">
+                        <span>SEM VI</span>
+                    </label>
+                </li>
+            </ul>
         </div>
-        <button type="submit" class="enterbtn">Enter</button>
-    </form>
+        <div class="pastyear">
+            <div class="select">
+                <span class="highlight">Year</span>
+                <div class="symbol"></div>
+            </div>
+            <ul class="drop">
+                <li>
+                    <label>
+                        <input type="radio" name="year" value="2023">
+                        <span>2023</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="year" value="2022">
+                        <span>2022</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="year" value="2021">
+                        <span>2021</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="year" value="2020">
+                        <span>2020</span>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="branch">
+            <div class="select">
+                <span class="highlight">Branch</span>
+                <div class="symbol"></div>
+            </div>
+            <ul class="drop">
+                <li>
+                    <label>
+                        <input type="radio" name="branch" value="COMPS">
+                        <span>COMPS</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="branch" value="IT">
+                        <span>IT</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="branch" value="EXTC">
+                        <span>EXTC</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="branch" value="ETRX">
+                        <span>ETRX</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="branch" value="MECH">
+                        <span>MECH</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="branch" value="EXCP">
+                        <span>EXCP</span>
+                    </label>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <button type="submit" class="enterbtn">Enter</button>
+</form>
 
         <footer>
             <div class="logo"><!--2 clg logos-->
@@ -90,7 +190,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $_SESSION["year"] = $year;
     $_SESSION["branch"] = $branch;
 
-
+	
     
 }
 ?>
