@@ -43,37 +43,37 @@ session_start();
             <ul class="drop">
                 <li>
                     <label>
-                        <input type="radio" name="semester" value="SEM I">
+                        <input type="radio" name="semester" value="SEM I" required>
                         <span>SEM I</span>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="semester" value="SEM II">
+                        <input type="radio" name="semester" value="SEM II" required>
                         <span>SEM II</span>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="semester" value="SEM III">
+                        <input type="radio" name="semester" value="SEM III" required>
                         <span>SEM III</span>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="semester" value="SEM IV">
+                        <input type="radio" name="semester" value="SEM IV" required>
                         <span>SEM IV</span>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="semester" value="SEM V">
+                        <input type="radio" name="semester" value="SEM V" required>
                         <span>SEM V</span>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="semester" value="SEM VI">
+                        <input type="radio" name="semester" value="SEM VI" required>
                         <span>SEM VI</span>
                     </label>
                 </li>
@@ -87,25 +87,25 @@ session_start();
             <ul class="drop">
                 <li>
                     <label>
-                        <input type="radio" name="year" value="2023">
+                        <input type="radio" name="year" value="2023" required>
                         <span>2023</span>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="year" value="2022">
+                        <input type="radio" name="year" value="2022" required>
                         <span>2022</span>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="year" value="2021">
+                        <input type="radio" name="year" value="2021" required>
                         <span>2021</span>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="year" value="2020">
+                        <input type="radio" name="year" value="2020" required>
                         <span>2020</span>
                     </label>
                 </li>
@@ -119,37 +119,37 @@ session_start();
             <ul class="drop">
                 <li>
                     <label>
-                        <input type="radio" name="branch" value="COMPS">
+                        <input type="radio" name="branch" value="COMPS" required>
                         <span>COMPS</span>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="branch" value="IT">
+                        <input type="radio" name="branch" value="IT" required>
                         <span>IT</span>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="branch" value="EXTC">
+                        <input type="radio" name="branch" value="EXTC" required>
                         <span>EXTC</span>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="branch" value="ETRX">
+                        <input type="radio" name="branch" value="ETRX" required>
                         <span>ETRX</span>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="branch" value="MECH">
+                        <input type="radio" name="branch" value="MECH" required>
                         <span>MECH</span>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="branch" value="EXCP">
+                        <input type="radio" name="branch" value="EXCP" required>
                         <span>EXCP</span>
                     </label>
                 </li>
