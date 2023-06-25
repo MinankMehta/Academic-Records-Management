@@ -85,7 +85,7 @@ session_start();
         <script src="script.js"></script>
         
     </body>
-<php
+<?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Retrieve the selected values from the form
     $semester = $_POST["semester"];
