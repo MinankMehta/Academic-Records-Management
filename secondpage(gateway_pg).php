@@ -10,17 +10,17 @@ session_start();
         <title>Gateway</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-	<style>
+	<!  <style>
 		input[type="radio"] {
   		position: absolute;
   		opacity: 0;
   		width: 0;
   		height: 0;
 		}
-	</style>
+	</style>   >
     </head>
     <body class="img">
-        <form method="post" action="#">
+        <form method="post" >
         <div class="main">
             <div class="sem">
                 <div class="select">
