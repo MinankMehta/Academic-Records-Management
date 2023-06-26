@@ -147,6 +147,7 @@ function ValidationForm() {
         branch.focus();
         return false;
     }
+    return true;
 }
 
 

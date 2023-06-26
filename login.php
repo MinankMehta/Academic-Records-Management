@@ -24,8 +24,8 @@ session_start();
     <!-- Home -->
     <section class="home">
     <div class="form_container">
-        <div class="form login_form" name="Logform" onsubmit="return ValidationForm()">
-            <form method="POST">
+        <div class="form login_form">
+            <form method="POST" name="Logform" onsubmit="return ValidationForm()">
                 <h2 style="font-family: Marcellus, serif; text-align: center;">Login</h2>
                 
                 <div class="input_box">
