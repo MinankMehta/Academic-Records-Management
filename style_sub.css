@@ -78,9 +78,7 @@ footer{
 }
 
 a {
-    text-decoration: none;
-    color: #ed1c24;
-    font-weight: 800;
+text-decoration: none;
 }
 
 /* Home */
@@ -92,7 +90,7 @@ background-image: url("banner2.jpg");
 background-size: cover;
 background-position: center;
 }
-.row {
+.roww {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -102,7 +100,6 @@ background-position: center;
     align-items: center;
     align-content: center;
 }
-
 /* Subjects */
 .form_container {
 flex-grow: 1;
@@ -113,4 +110,17 @@ background: #ffffff;
 padding: 25px;
 border-radius: 12px;
 box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.roww a{
+    text-decoration: none;
+}
+
+.roww .form_container{
+    color: #b7202e;
+}
+
+.roww .form_container:hover{
+    background-color: #b7202e;
+    color: white;
 }
