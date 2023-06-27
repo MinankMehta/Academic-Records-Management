@@ -33,7 +33,7 @@
     
     <!-- Home -->
     <section class="home">
-        <div class="row">
+        <div class="roww">
             <?php
                 if (mysqli_num_rows($result) > 0) 
                 {
