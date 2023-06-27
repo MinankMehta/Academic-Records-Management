@@ -50,7 +50,8 @@ $password = "";
 $dbname = "academic_records";
 
 // Checking if the form was submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') 
+{
     // Establishing a connection to the database
     $conn = new mysqli($servername,$username, $password, $dbname);
 

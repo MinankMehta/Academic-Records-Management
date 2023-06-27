@@ -1,7 +1,22 @@
 <?php
-		
-session_start();
+    session_start();
+
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        // Retrieve the selected values from the form
+        $semester = $_POST["semester"];
+        $year = $_POST["year"];
+        $branch = $_POST["branch"];
+
+        // Store the values in session variables
+        $_SESSION["semester"] = $semester;
+        $_SESSION["year"] = $year;
+        $_SESSION["branch"] = $branch;
+
+        header("location: subjects.php");
+        exit();
+    }
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -43,37 +58,37 @@ session_start();
             <ul class="drop">
                 <li>
                     <label>
-                        <input type="radio" name="semester" value="SEM I" required>
+                        <input type="radio" name="semester" value="1" required>
                         <span>SEM I</span>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="semester" value="SEM II" required>
+                        <input type="radio" name="semester" value="2" required>
                         <span>SEM II</span>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="semester" value="SEM III" required>
+                        <input type="radio" name="semester" value="3" required>
                         <span>SEM III</span>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="semester" value="SEM IV" required>
+                        <input type="radio" name="semester" value="4" required>
                         <span>SEM IV</span>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="semester" value="SEM V" required>
+                        <input type="radio" name="semester" value="5" required>
                         <span>SEM V</span>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="semester" value="SEM VI" required>
+                        <input type="radio" name="semester" value="6" required>
                         <span>SEM VI</span>
                     </label>
                 </li>
@@ -178,20 +193,4 @@ session_start();
         <script src="script.js"></script>
         
     </body>
-<?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Retrieve the selected values from the form
-    $semester = $_POST["semester"];
-    $year = $_POST["year"];
-    $branch = $_POST["branch"];
-
-    // Store the values in session variables
-    $_SESSION["semester"] = $semester;
-    $_SESSION["year"] = $year;
-    $_SESSION["branch"] = $branch;
-
-}
-?>
-
-
 </html>
