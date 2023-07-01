@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap'); 
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 2000;   
+    box-sizing: border-box;
+}
+
+body{
+    background-image:linear-gradient(rgba(30, 30, 31, 0.8),rgba(34, 35, 36, 0.9)),url(bldng1.webp);
+    height: 100vh;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    position:fixed;
+    bottom:0px;
+    width:100%;
+}
+
+.logo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.logo .logo1{
+    width:250px;
+}
+
+.logo .logo2{
+    width:100px;
+}
+
+.footer1{
+    background: #ed1c24;
+    width:80%;
+    color: #ed1c24;
+}
+
+.footer2{
+    display:flex;
+    justify-content: center;
+    color: #ffffff;
+    background: #b7202e;
+}
+
+.footer2 .social{
+    margin: 10px 0 10px 0;
+    color:#ffffff;
+}
+
+.footer2 .social a{
+    padding: 0 2px; 
+}
+
+.footer2 .social a span{
+    height: 40px;
+    width: 40px;
+    /* background: #58595b; */
+    line-height: 40px;
+    text-align:center;
+    font-size: 20px;
+    border-radius: 5px;
+    color:#ffffff;
+    transition: 0.3s;
+    
+}
+
+.footer2 .social a span:hover{
+    background:#58595b;
+}
+
+.container{
+    /* position: relative; */
+    background-color: #b7202e;
+    position: relative;
+    height: 70vh;
+    width: 35vw;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 7%;
+}
+
+.inner-container{
+    position: relative;
+    height: 95%;
+    width: 96%;
+    border-radius: 12px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.inner-container::-webkit-scrollbar{
+    width: 0.5vw;
+}
+
+.inner-container::-webkit-scrollbar-thumb{
+    background: #ffffff;
+    border-radius: 0.25rem;
+}
+
+.inner-container>:last-child{
+    margin-bottom: 0;
+}
+
+.record{
+    position: relative;
+    background-color: #ffffff;
+    height: 10%;
+    padding: 2%;
+    margin-bottom: 2%;
+    margin-right: 1%;
+    border-radius: 12px;
+    border: #58595b solid;
+    font-weight: bolder;
+    color: #b7202e;
+    display: flex;
+    align-items: center;
+}
+
+.record:hover{
+    box-shadow: 0 0 0.8em #26489a;
+    background:#b7202e;
+    color:#ffffff;
+    font-size: larger;
+    transition: ease-in;
+}
