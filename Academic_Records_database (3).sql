@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 04, 2023 at 09:18 AM
+-- Generation Time: Jul 04, 2023 at 02:22 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -40,6 +40,14 @@ CREATE TABLE `linksdata` (
   `semester` int(11) DEFAULT NULL,
   `subject` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `linksdata`
+--
+
+INSERT INTO `linksdata` (`id`, `Year`, `Branch`, `Type`, `Link`, `date`, `faculty_name`, `semester`, `subject`) VALUES
+(1, 2023, 'COMPS', 'ISE_papers\r\n', 'https://workspace.google.com/intl/en_in/lp/drive/?utm_source=bing&utm_medium=cpc&utm_campaign=1605214-Workspace-APAC-IN-en-BKWS-EXA-LV&utm_content=text-ad-none-none-DEV_c-CRE_-ADGP_Hybrid%20%7C%20BKWS%20-%20EXA%20%7C%20Txt_Drive-KWID_43700072096398946-kwd', '2023-07-04', 'Latha', 2, 'Workshop'),
+(2, 2023, 'COMPS', 'ISE_papers', 'https://drive.google.com/file/d/13cPN7QTNXCINzPbtopfUkECW48vLFC24/view?usp=drive_link', '2023-07-04', 'Umang', 4, 'Analysis of Algorithms');
 
 -- --------------------------------------------------------
 
@@ -270,7 +278,7 @@ ALTER TABLE `userdata`
 -- AUTO_INCREMENT for table `linksdata`
 --
 ALTER TABLE `linksdata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
