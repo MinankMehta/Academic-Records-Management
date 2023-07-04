@@ -35,16 +35,28 @@
     <section class="home">
         <div class="roww">
             <?php
-                if (mysqli_num_rows($result) > 0) 
-                {
-                    while ($row = mysqli_fetch_assoc($result)) 
-                    {
-                        $subject_name = $row['subject'];
-                        $subjectId = str_replace(' ', '_', $subject_name); // Convert subject name to a valid ID
-                        echo "<a href='#$subjectId'><div class='form_container'>$subject_name</div></a>";
-                    }
-                } 
-                else 
+               if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $subject_name = $row['subject'];
+        $subjectId = str_replace(' ', '_', $subject_name); // Convert subject name to a valid ID
+        echo "<a href='?subject=$subject_name'><div class='form_container'>$subject_name</div></a>";
+    }
+}
+
+// PHP code to handle storing the subject value in session and redirecting based on user type
+if (isset($_GET['subject'])) {
+    $_SESSION['subject'] = $_GET['subject'];
+
+    if ($_SESSION['type'] === 'teacher') {
+        header("Location: teacher.php"); // Redirect to the teacher.php page for teachers
+    } elseif ($_SESSION['type'] === 'student') {
+        header("Location: student.php"); // Redirect to the student.php page for students
+    } else {
+        header("Location: admin.php"); // Redirect to the admin.php page for other user types
+    }
+    exit();
+}
+            else 
                 {
                     echo "No subjects available.";
                 }
