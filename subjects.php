@@ -56,10 +56,7 @@ if (isset($_GET['subject'])) {
     }
     exit();
 }
-            else 
-                {
-                    echo "No subjects available.";
-                }
+            
             ?>
         </div>
     </section>
