@@ -29,39 +29,39 @@
 <div class="container">
     <div class="inner-container">
         <form method="POST">
-            <input type="hidden" name="option" value="IA-Structure">
+            <input type="hidden" name="option" value="IA_Structure">
             <button type="submit" class="record">IA-Structure</button>
         </form>
         <form method="POST">
-            <input type="hidden" name="option" value="LAB-Writeups">
+            <input type="hidden" name="option" value="LAB_Writeups">
             <button type="submit" class="record">LAB Write-ups</button>
         </form>
         <form method="POST">
-            <input type="hidden" name="option" value="List-of-Experiments">
+            <input type="hidden" name="option" value="List_of_Experiments">
             <button type="submit" class="record">List of Experiments</button>
         </form>
         <form method="POST">
-            <input type="hidden" name="option" value="Course-Exit-Feedback">
+            <input type="hidden" name="option" value="Course_Exit_Feedback">
             <button type="submit" class="record">Course Exit Feedback</button>
         </form>
         <form  method="POST">
-            <input type="hidden" name="option" value="ISE-Papers">
+            <input type="hidden" name="option" value="ISE_Papers">
             <button type="submit" class="record">ISE Papers</button>
         </form>
         <form  method="POST">
-            <input type="hidden" name="option" value="ISE-Solutions">
+            <input type="hidden" name="option" value="ISE_Solutions">
             <button type="submit" class="record">ISE Solutions</button>
         </form>
         <form  method="POST">
-            <input type="hidden" name="option" value="ESE-Papers">
+            <input type="hidden" name="option" value="ESE_Papers">
             <button type="submit" class="record">ESE Papers</button>
         </form>
         <form  method="POST">
-            <input type="hidden" name="option" value="ESE-Solutions">
+            <input type="hidden" name="option" value="ESE_Solutions">
             <button type="submit" class="record">ESE Solutions</button>
         </form>
         <form  method="POST">
-            <input type="hidden" name="option" value="Projects-Allotted">
+            <input type="hidden" name="option" value="Projects_Allotted">
             <button type="submit" class="record">Projects Allotted</button>
         </form>
         <form  method="POST">
