@@ -40,43 +40,43 @@
             <input type="hidden" name="option" value="List_of_Experiments">
             <button type="submit" class="record">List of Experiments</button>
         </form>
-        <form action="option_page.php" method="POST">
+        <form  method="POST">
             <input type="hidden" name="option" value="Course_Exit_Feedback">
             <button type="submit" class="record">Course Exit Feedback</button>
         </form>
-        <form action="option_page.php" method="POST">
+        <form  method="POST">
             <input type="hidden" name="option" value="ISE_Papers">
             <button type="submit" class="record">ISE Papers</button>
         </form>
-        <form action="option_page.php" method="POST">
+        <form  method="POST">
             <input type="hidden" name="option" value="ISE_Solutions">
             <button type="submit" class="record">ISE Solutions</button>
         </form>
-        <form action="option_page.php" method="POST">
+        <form  method="POST">
             <input type="hidden" name="option" value="ESE_Papers">
             <button type="submit" class="record">ESE Papers</button>
         </form>
-        <form action="option_page.php" method="POST">
+        <form  method="POST">
             <input type="hidden" name="option" value="ESE_Solutions">
             <button type="submit" class="record">ESE Solutions</button>
         </form>
-        <form action="option_page.php" method="POST">
+        <form  method="POST">
             <input type="hidden" name="option" value="Projects_Allotted">
             <button type="submit" class="record">Projects Allotted</button>
         </form>
-        <form action="option_page.php" method="POST">
+        <form  method="POST">
             <input type="hidden" name="option" value="Syllabus">
             <button type="submit" class="record">Syllabus</button>
         </form>
-        <form action="option_page.php" method="POST">
+        <form  method="POST">
             <input type="hidden" name="option" value="CO_PO_Mapping">
             <button type="submit" class="record"> CO-PO Mapping</button>
         </form>
-        <form action="option_page.php" method="POST">
+        <form  method="POST">
             <input type="hidden" name="option" value="CIS_sheets">
             <button type="submit" class="record"> CIS Sheets</button>
         </form>
-        <form action="option_page.php" method="POST">
+        <form  method="POST">
             <input type="hidden" name="option" value="PO_attainment_Batchwise">
             <button type="submit" class="record">PO Attainment - Batchwise</button>
         </form>
