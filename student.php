@@ -40,31 +40,31 @@
             <input type="hidden" name="option" value="List-of-Experiments">
             <button type="submit" class="record">List of Experiments</button>
         </form>
-        <form action="option_page.php" method="POST">
+        <form method="POST">
             <input type="hidden" name="option" value="Course-Exit-Feedback">
             <button type="submit" class="record">Course Exit Feedback</button>
         </form>
-        <form action="option_page.php" method="POST">
+        <form  method="POST">
             <input type="hidden" name="option" value="ISE-Papers">
             <button type="submit" class="record">ISE Papers</button>
         </form>
-        <form action="option_page.php" method="POST">
+        <form  method="POST">
             <input type="hidden" name="option" value="ISE-Solutions">
             <button type="submit" class="record">ISE Solutions</button>
         </form>
-        <form action="option_page.php" method="POST">
+        <form  method="POST">
             <input type="hidden" name="option" value="ESE-Papers">
             <button type="submit" class="record">ESE Papers</button>
         </form>
-        <form action="option_page.php" method="POST">
+        <form  method="POST">
             <input type="hidden" name="option" value="ESE-Solutions">
             <button type="submit" class="record">ESE Solutions</button>
         </form>
-        <form action="option_page.php" method="POST">
+        <form  method="POST">
             <input type="hidden" name="option" value="Projects-Allotted">
             <button type="submit" class="record">Projects Allotted</button>
         </form>
-        <form action="option_page.php" method="POST">
+        <form  method="POST">
             <input type="hidden" name="option" value="Syllabus">
             <button type="submit" class="record">Syllabus</button>
         </form>
