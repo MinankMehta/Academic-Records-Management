@@ -8,7 +8,9 @@
 
         // Assign the selected option to $_SESSION['option']
         $_SESSION['option'] = $selectedOption;
-
+		
+	header("location: last_page-Display2.php");
+        exit();
         
     }
 ?>
