@@ -83,36 +83,75 @@ $dbname = "academic_records";
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="table-container">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th class="the">Sr No.</th>
- 			<?php if ($_SESSION['type'] == 'teacher'): ?>
+   <div class="container">
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="the">Sr No.</th>
+                    <?php if ($_SESSION['type'] == 'teacher'): ?>
                         <th class="the">Upload Date</th>
-                        <th class="the">Faculty Name</th> <?php endif; ?>
-                        <th class="the">Link</th>
+                        <th class="the">Faculty Name</th>
+                        <th class="the">Upload File</th>
+                    <?php endif; ?>
+                    <th class="the">Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while ($stmt->fetch()) { ?>
+                    <tr>
+                        <td data-label="Sr No."><?php echo $serialNumber; ?></td>
+                        <?php if ($_SESSION['type'] == 'teacher'): ?>
+                            <td data-label="Upload Date"><?php echo $uploadDate; ?></td>
+                            <td data-label="Faculty Name"><?php echo $facultyName; ?></td>
+                            <td data-label="Upload File">
+                                <form method="POST" >
+                                    <input type="hidden" name="link_id" value="<?php echo $serialNumber; ?>">
+                                    <input type="file" name="file_upload" accept=".pdf,.doc,.docx">
+                                    <button type="submit" class="btn">Upload</button>
+                                </form>
+                            </td>
+                        <?php endif; ?>
+                        <td data-label="Link">
+                            <a href="<?php echo $link; ?>" class="btn">Link</a>
+                        </td>
                     </tr>
-                </thead>
-                <tbody>
-                    <?php while ($stmt->fetch()) { ?>
-                        <tr>
-    			<td data-label="Sr No."><?php echo $serialNumber; ?></td>
-   			 <?php if ($_SESSION['type'] == 'teacher'): ?>
-      			  <td data-label="Upload Date"><?php echo $uploadDate; ?></td>
-       				 <td data-label="Faculty Name"><?php echo $facultyName; ?></td>
-   				 <?php endif; ?>
-   		 <td data-label="Link">
-       		 <a href="<?php echo $link; ?>" class="btn">
-           			 Link
-       				 </a>
-   				 </td>
-			</tr>
-                    <?php } ?>
-                </tbody>
-            </table>
-        </div>
+                <?php } ?>
+            </tbody>
+        </table>
     </div>
+</div>
 </body>
 </html>
+
+
+<?php
+
+    // Check if the form was submitted
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        
+
+        // Handle file upload logic
+        if ($_SESSION['type'] === 'teacher') {
+            // Check if a file was uploaded
+            if (isset($_FILES['file_upload']) && $_FILES['file_upload']['error'] === UPLOAD_ERR_OK) {
+                // Specify the directory to save uploaded files
+                $uploadDir = 'uploads/';
+
+                // Generate a unique file name
+                $fileName = uniqid() . '_' . $_FILES['file_upload']['name'];
+
+                // Move the uploaded file to the designated directory
+                if (move_uploaded_file($_FILES['file_upload']['tmp_name'], $uploadDir . $fileName)) {
+                    // File upload successful, update the database or perform any other necessary actions
+
+                    // Example: Store the file information in the linksdata table
+                    $stmt = $conn->prepare("INSERT INTO linksdata (link, date, faculty_name, subject) VALUES (?, ?, ?, ?)");
+                    $stmt->bind_param("ssss", $fileName, date('Y-m-d'), $_SESSION['username'], $_SESSION['subject']);
+                    $stmt->execute();
+                    $stmt->close();
+                }
+            }
+        }
+    }
+?>
