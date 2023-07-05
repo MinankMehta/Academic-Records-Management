@@ -189,11 +189,11 @@ color:#ffffff;
 } 
 
                                                 /* second page css*/
-.title{
+.gatewaytitle{
     font-family: 'Marcellus';
     font-size:40px;
-    margin-left: 43%;
-    margin-right: auto;
+    display: flex;
+    justify-content: center;
     margin-top: 30px;
     color:#ffffff;
     font-style: bold;
@@ -321,14 +321,16 @@ color:#ffffff;
 }
 
 .enterbtn{
-    justify-items: center;
+    display: flex;
+    justify-content: center;
     text-align: center;
     cursor:pointer;
     color:#ffffff;
     background-color:transparent;
     padding:10px 10px;
-    margin-left: 46%;
-    margin-right: auto;
+    margin:auto;
+    /* margin-left: 46%;
+    margin-right: auto; */
     border-color: red;
     border-radius: 10px;
     height:50px;
@@ -338,6 +340,66 @@ color:#ffffff;
 }
 
 .enterbtn:hover{
+    background-color: #b7202e;
+    color:#ffffff;
+    transition: 0.3s;
+    box-shadow: 0 0 0.8em #26489a;
+    transition: 0.3s;
+    box-shadow: 0 0 0.8em #26489a;
+}
+
+
+                                                        /*adminpg.html*/
+
+.admintitle{
+    font-family: 'Marcellus';
+    font-size:40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    color:#ffffff;
+    font-style: bold;
+}
+
+.updatebtn{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin:12% 10%;
+    margin-bottom:7.3%;
+
+}
+
+.userup,.pdfup{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    cursor:pointer;
+    color:#ffffff;
+    background-color:transparent;
+    padding:10px 10px;
+    margin:auto;
+    /* margin-left: 46%;
+    margin-right: auto; */
+    border-color: red;
+    border-radius: 10px;
+    height:50px;
+    width:150px;
+    font-family: 'Fira Sans';
+    font-size: 20px;
+}
+
+.userup:hover{
+    background-color: #b7202e;
+    color:#ffffff;
+    transition: 0.3s;
+    box-shadow: 0 0 0.8em #26489a;
+    transition: 0.3s;
+    box-shadow: 0 0 0.8em #26489a;
+}
+
+.pdfup:hover{
     background-color: #b7202e;
     color:#ffffff;
     transition: 0.3s;
