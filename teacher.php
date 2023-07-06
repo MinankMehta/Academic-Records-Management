@@ -1,6 +1,22 @@
 <?php
     session_start();
 
+	if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
+        header("Location: login.php"); 
+        exit();
+    }
+
+
+	if (!isset($_SESSION['semester']) || !isset($_SESSION['year']) || !isset($_SESSION['branch'])) {
+        header("Location: secondpage(gateway_pg).php"); 
+        exit();
+    }
+
+	if (!isset($_SESSION['subject'])) {
+        header("Location: subjects.php"); 
+        exit();
+    }
+
     // Check if the form was submitted
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Retrieve the selected option from the form

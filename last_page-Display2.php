@@ -1,6 +1,33 @@
 <?php
     session_start();
 
+
+	if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
+        header("Location: login.php"); 
+        exit();
+    }
+	if (!isset($_SESSION['semester']) || !isset($_SESSION['year']) || !isset($_SESSION['branch'])) {
+        header("Location: secondpage(gateway_pg).php"); 
+        exit();
+    }
+
+	if (!isset($_SESSION['subject'])) {
+        header("Location: subjects.php");
+        exit();
+    }
+	
+	if (!isset($_SESSION['option'])) {
+        // Check the session type
+        if ($_SESSION['type'] === 'student') {
+            header("Location: student.php");
+            exit();
+        } elseif ($_SESSION['type'] === 'teacher') {
+            header("Location: teacher.php");
+            exit();
+        }
+    }
+
+
    $servername = "localhost";
 $username = "root";
 $password = "";
