@@ -36,51 +36,9 @@ $dbname = "academic_records";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="lastpage.css">
+    <link rel="stylesheet" href="lastpage_display2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <title>RECORDS</title>
-    <style>
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-        }
-        
-        .table-container {
-            margin-top: 20px;
-        }
-        
-        .table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .the {
-            font-weight: bold;
-            background-color: #f1f1f1;
-        }
-        
-        .table td,
-        .table th {
-            padding: 8px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-        
-        .btn {
-            background-color: #4CAF50;
-            color: white;
-            padding: 6px 12px;
-            border: none;
-            border-radius: 4px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
    <div class="container">
@@ -94,7 +52,7 @@ $dbname = "academic_records";
                         <th class="the">Faculty Name</th>
                         <th class="the">Upload File</th>
                     <?php endif; ?>
-                    <th class="the">Link</th>
+                    <th class="the">View</th>
                 </tr>
             </thead>
             <tbody>
@@ -121,6 +79,24 @@ $dbname = "academic_records";
         </table>
     </div>
 </div>
+
+<footer>
+    <div class="logo"><!--2 clg logos-->
+        <img src="svu_kjsce.jpg" alt="SVU-KJSCE" class="logo1">
+        <img src="somaiya_trust.png" alt="Somaiya-trust" class="logo2">
+    </div>
+    <div class="footer1">.<!--don't remove this dot/fullstop--></div><!--light red small rectangle-->
+    <div class="footer2"><!--dark red big rectangle with 5 social media icons-->
+        <div class="social">
+            <a href="https://www.facebook.com/pages/Somaiya-Vidyavihar/122977847737512/" target="_blank"><span class="fab fa-facebook-f"></span></a>
+            <a href="https://twitter.com/Somaiya_SVU/" target="_blank"><span class="fab fa-twitter"></span></a>
+            <a href="https://instagram.com/somaiyatrust/" target="_blank"><span class="fab fa-instagram"></span></a>
+            <a href="http://www.youtube.com/somaiyavidyavihar/" target="_blank"><span class="fab fa-youtube"></span></a>
+            <a href="https://www.linkedin.com/school/somaiya-vidyavihar-university/" target="_blank"><span class="fab fa-linkedin"></span></a>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
 
