@@ -43,7 +43,8 @@ $dbname = "academic_records";
 <body>
    <div class="container">
     <div class="table-container">
-        <table class="table">
+        <!-- <table class="table"> -->
+        <table>
             <thead>
                 <tr>
                     <th class="the">Sr No.</th>
