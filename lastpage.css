@@ -85,8 +85,8 @@ footer{
     /* position: relative; */
     background-color: #b7202e;
     position: relative;
-    height: 70vh;
-    width: 35vw;
+    height: clamp(20vh,60vh,70vh);
+    width: clamp(8em,35vw,40vw);
     border-radius: 12px;
     display: flex;
     justify-content: center;
