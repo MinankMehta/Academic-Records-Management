@@ -1,6 +1,10 @@
 <?php
     session_start();
 
+	if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
+        header("Location: login.php");
+        exit();
+    }
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Retrieve the selected values from the form
         $semester = $_POST["semester"];

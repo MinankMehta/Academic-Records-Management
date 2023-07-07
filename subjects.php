@@ -1,5 +1,16 @@
 <?php
     session_start();
+
+	if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
+        header("Location: login.php");
+        exit();
+    }
+	if (!isset($_SESSION['semester']) || !isset($_SESSION['year']) || !isset($_SESSION['branch'])) {
+        header("Location: secondpage(gateway_pg).php"); 
+        exit();
+    }
+
+
     $servername = "localhost";
     $username = "root";
     $password = "";

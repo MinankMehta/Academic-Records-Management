@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2023 at 06:39 AM
+-- Generation Time: Jul 06, 2023 at 02:04 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -51,7 +51,12 @@ INSERT INTO `linksdata` (`id`, `Year`, `Branch`, `Type`, `Link`, `date`, `facult
 (3, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-07-05', 'Lalitha', 3, 'Data Structures'),
 (4, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Rohini', 4, 'Mini Project'),
 (5, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Rohini', 4, 'Mini Project'),
-(6, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Latha', 4, 'Mini Project');
+(6, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Latha', 4, 'Mini Project'),
+(7, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Ratha', 4, 'Mini Project'),
+(8, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Patha', 4, 'Mini Project'),
+(9, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Pitha', 4, 'Mini Project'),
+(10, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Twitha', 4, 'Mini Project'),
+(11, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Mitha', 4, 'Mini Project');
 
 -- --------------------------------------------------------
 
@@ -282,7 +287,7 @@ ALTER TABLE `userdata`
 -- AUTO_INCREMENT for table `linksdata`
 --
 ALTER TABLE `linksdata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
