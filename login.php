@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 		echo '<script>window.location.href = "secondpage(gateway_pg).php";</script>';
         } elseif ($userType === 'admin') {
             // Admin login logic
-		echo "Correct Admin.";
+		echo '<script>window.location.href = "adminpg.php";</script>';
         }
     } else {
         // Invalid credentials

@@ -52,7 +52,7 @@ if (isset($_GET['subject'])) {
     } elseif ($_SESSION['type'] === 'student') {
         header("Location: student.php"); // Redirect to the student.php page for students
     } else {
-        header("Location: admin.php"); // Redirect to the admin.php page for other user types
+        header("Location: teacher.php"); // Redirect to the admin.php page for other user types
     }
     exit();
 }
