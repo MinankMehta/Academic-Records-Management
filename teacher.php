@@ -16,6 +16,10 @@
         header("Location: subjects.php"); 
         exit();
     }
+	if ($_SESSION['type'] === 'student') {
+            header("Location: student.php");
+            exit();
+        }
 
     // Check if the form was submitted
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
