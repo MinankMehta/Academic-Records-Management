@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2023 at 02:04 PM
+-- Generation Time: Jul 08, 2023 at 07:02 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -56,7 +56,9 @@ INSERT INTO `linksdata` (`id`, `Year`, `Branch`, `Type`, `Link`, `date`, `facult
 (8, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Patha', 4, 'Mini Project'),
 (9, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Pitha', 4, 'Mini Project'),
 (10, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Twitha', 4, 'Mini Project'),
-(11, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Mitha', 4, 'Mini Project');
+(11, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Mitha', 4, 'Mini Project'),
+(22, 2023, 'COMPS', 'LAB_Writeups', '64a9956cc9290_finalish-vat.pdf', '2023-07-08', 'Latha', 4, 'Mini Project'),
+(23, 2023, 'COMPS', 'LAB_Writeups', '64a99590ae95a_vat.docx', '2023-07-08', 'Latha', 4, 'Mini Project');
 
 -- --------------------------------------------------------
 
@@ -252,16 +254,17 @@ INSERT INTO `subjectdata` (`Semester`, `Branch`, `Subject`, `Year`) VALUES
 CREATE TABLE `userdata` (
   `Emailid` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
-  `Type` enum('student','teacher','admin') NOT NULL
+  `Type` enum('student','teacher','admin') NOT NULL,
+  `name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `userdata`
 --
 
-INSERT INTO `userdata` (`Emailid`, `Password`, `Type`) VALUES
-('bhavya@gmail.com', 'bhavya', 'student'),
-('latha@gmail.com', 'latha123', 'teacher');
+INSERT INTO `userdata` (`Emailid`, `Password`, `Type`, `name`) VALUES
+('bhavya@gmail.com', 'bhavya', 'student', 'Bhavya'),
+('latha@gmail.com', 'latha123', 'teacher', 'Latha');
 
 --
 -- Indexes for dumped tables
@@ -287,7 +290,7 @@ ALTER TABLE `userdata`
 -- AUTO_INCREMENT for table `linksdata`
 --
 ALTER TABLE `linksdata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
