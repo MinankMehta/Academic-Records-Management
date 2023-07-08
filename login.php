@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     $password = $_POST['password'];
 
     // Query to check if the email and password exist in the database
-    $sql = "SELECT Type FROM Userdata WHERE Emailid = '$email' AND Password = '$password'";
+    $sql = "SELECT Type,name FROM Userdata WHERE Emailid = '$email' AND Password = '$password'";
     $result = $conn->query($sql);
 
     // Checking if a row was returned
@@ -74,7 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         $row = $result->fetch_assoc();
         $userType = $row['Type'];
 	$_SESSION['type'] = $userType;
-                 
+        $name = $row['name'];
+	$_SESSION['username']=$name;      
         $_SESSION['loggedin'] = true;
                 
         // Perform actions based on user type (student, teacher, admin)
