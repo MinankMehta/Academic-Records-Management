@@ -148,7 +148,7 @@ $dbname = "academic_records";
             if (move_uploaded_file($_FILES['file_upload']['tmp_name'], $uploadDir . $fileName)) {
                 // File upload successful, update the database or perform any other necessary actions
 
-                $link = $fileName;
+                $link = $link = 'Academic_Records/linksdata/' . $fileName;
 $date = date('Y-m-d');
 $facultyName = $_SESSION['username'];
 $subject = $_SESSION['subject'];
