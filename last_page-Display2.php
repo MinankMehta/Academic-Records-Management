@@ -91,7 +91,7 @@ $dbname = "academic_records";
                             <td data-label="Upload Date"><?php echo $uploadDate; ?></td>
                             <td data-label="Faculty Name"><?php echo $facultyName; ?></td>
                             <td data-label="Upload File">
-                                <form method="POST" >
+                                <form method="POST" enctype="multipart/form-data">
                                     <input type="hidden" name="link_id" value="<?php echo $serialNumber; ?>">
                                     <input type="file" name="file_upload" accept=".pdf,.doc,.docx">
                                     <button type="submit" class="btn">Upload</button>
@@ -132,30 +132,41 @@ $dbname = "academic_records";
 <?php
 
     // Check if the form was submitted
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        
+   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Handle file upload logic
+    if ($_SESSION['type'] === 'teacher') {
+        // Check if a file was uploaded
+        if (isset($_FILES['file_upload']) && $_FILES['file_upload']['error'] === UPLOAD_ERR_OK) {
 
-        // Handle file upload logic
-        if ($_SESSION['type'] === 'teacher') {
-            // Check if a file was uploaded
-            if (isset($_FILES['file_upload']) && $_FILES['file_upload']['error'] === UPLOAD_ERR_OK) {
-                // Specify the directory to save uploaded files
-                $uploadDir = 'uploads/';
+            // Specify the directory to save uploaded files
+            $uploadDir = 'Academic_Records/linksdata/';
 
-                // Generate a unique file name
-                $fileName = uniqid() . '_' . $_FILES['file_upload']['name'];
+            // Generate a unique file name
+            $fileName = uniqid() . '_' . $_FILES['file_upload']['name'];
 
-                // Move the uploaded file to the designated directory
-                if (move_uploaded_file($_FILES['file_upload']['tmp_name'], $uploadDir . $fileName)) {
-                    // File upload successful, update the database or perform any other necessary actions
+            // Move the uploaded file to the designated directory
+            if (move_uploaded_file($_FILES['file_upload']['tmp_name'], $uploadDir . $fileName)) {
+                // File upload successful, update the database or perform any other necessary actions
 
-                    // Example: Store the file information in the linksdata table
-                    $stmt = $conn->prepare("INSERT INTO linksdata (link, date, faculty_name, subject) VALUES (?, ?, ?, ?)");
-                    $stmt->bind_param("ssss", $fileName, date('Y-m-d'), $_SESSION['username'], $_SESSION['subject']);
-                    $stmt->execute();
-                    $stmt->close();
-                }
+                $link = $fileName;
+$date = date('Y-m-d');
+$facultyName = $_SESSION['username'];
+$subject = $_SESSION['subject'];
+
+$stmt = $conn->prepare("INSERT INTO linksdata (link, date, faculty_name, subject) VALUES (?, ?, ?, ?)");
+$stmt->bind_param("ssss", $link, $date, $facultyName, $subject);
+$stmt->execute();
+$stmt->close();
+           echo "upload_success";
+                exit();
+            } else {
+                // Failed to move the uploaded file
+                echo "Error: Failed to move the uploaded file.";
             }
+        } else {
+            // No file uploaded or file upload error occurred
+            echo "Error: Please select a file to upload.";
         }
     }
+}
 ?>
