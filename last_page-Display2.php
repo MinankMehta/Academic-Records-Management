@@ -148,13 +148,17 @@ $dbname = "academic_records";
             if (move_uploaded_file($_FILES['file_upload']['tmp_name'], $uploadDir . $fileName)) {
                 // File upload successful, update the database or perform any other necessary actions
 
-                $link = $fileName;
+                $link = $link = 'Academic_Records/linksdata/' . $fileName;
 $date = date('Y-m-d');
 $facultyName = $_SESSION['username'];
 $subject = $_SESSION['subject'];
+$branch=$_SESSION['branch'];
+$option=$_SESSION['option'];
+$semester=$_SESSION['semester'];
+$year=$_SESSION['year'];
 
-$stmt = $conn->prepare("INSERT INTO linksdata (link, date, faculty_name, subject) VALUES (?, ?, ?, ?)");
-$stmt->bind_param("ssss", $link, $date, $facultyName, $subject);
+$stmt = $conn->prepare("INSERT INTO linksdata (link, date, faculty_name, subject,branch,semester,type,year) VALUES (?, ?, ?, ?,?,?,?,?)");
+$stmt->bind_param("ssssssss", $link, $date, $facultyName, $subject,$branch,$semester,$option,$year);
 $stmt->execute();
 $stmt->close();
            echo "upload_success";
