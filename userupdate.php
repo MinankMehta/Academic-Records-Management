@@ -1,4 +1,9 @@
-<?php  
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin'] || $_SESSION['type'] === 'student' || $_SESSION['type'] === 'teacher') {
+      header("Location: login.php"); 
+      exit();
+  }
 // INSERT INTO `notes` (`sno`, `title`, `description`, `tstamp`) VALUES (NULL, 'But Books', 'Please buy books from Store', current_timestamp());
 $insert = false;
 $update = false;
