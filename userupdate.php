@@ -161,14 +161,18 @@ footer{
     background:#58595b;
 }
 
+.uuflex .logo{
+  display: flex;
+}
+
 .uuhd{
     font-family: 'Marcellus';
-    font-size:45px;
+    font-size:40px;
     display: flex;
     justify-content: center;
     margin-top: 7px;
     font-style: bold;
-    margin-right: 150px;
+    text-align:center;
 }
 
 .notetitle,.notedesc{
@@ -323,10 +327,10 @@ textarea{
   ?>
   <div class="container uuflex my-4">
     <div class="logo"><!--2 clg logos-->
-            <img src="svu_kjsce.jpg" alt="SVU-KJSCE" class="logo1">
-            <h2 class="uuhd">User Updates</h2>
-            <img src="somaiya_trust.png" alt="Somaiya-trust" class="logo2">
-        </div>
+        <img src="svu_kjsce.jpg" alt="SVU-KJSCE" class="logo1">
+        <h2 class="uuhd">User Updates</h2>
+        <img src="somaiya_trust.png" alt="Somaiya-trust" class="logo2">
+    </div>
     <br>
     <form action="userupdate.php" method="POST">
       <div class="form-group">
