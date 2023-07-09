@@ -291,7 +291,23 @@ ALTER TABLE `userdata`
 --
 ALTER TABLE `linksdata`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+DROP TABLE `userdata`;
+
+CREATE TABLE `academic_records`.`userdata` 
+(`sno` INT NOT NULL AUTO_INCREMENT , 
+`Emailid` VARCHAR(50) NOT NULL , 
+`Password` TEXT NOT NULL , 
+`Type` TEXT NOT NULL , 
+PRIMARY KEY (`sno`)) 
+ENGINE = InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `userdata` (`sno`, `Emailid`, `Password`, `Type`) VALUES (NULL, 'admin@somaiya.edu', 'admin123', 'admin');
+INSERT INTO `userdata` (`sno`, `Emailid`, `Password`, `Type`) VALUES (NULL, 'teacher@somaiya.edu', 'teacher123', 'teacher');
+INSERT INTO `userdata` (`sno`, `Emailid`, `Password`, `Type`) VALUES (NULL, 'student@somaiya.edu', 'student123', 'student');
+
 COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
