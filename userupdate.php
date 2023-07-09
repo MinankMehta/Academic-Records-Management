@@ -1,9 +1,9 @@
 <?php
-session_start();
-if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin'] || $_SESSION['type'] === 'student' || $_SESSION['type'] === 'teacher') {
-      header("Location: login.php"); 
-      exit();
-  }
+// session_start();
+// if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin'] || $_SESSION['type'] === 'student' || $_SESSION['type'] === 'teacher') {
+//       header("Location: login.php"); 
+//       exit();
+//   }
 // INSERT INTO `notes` (`sno`, `title`, `description`, `tstamp`) VALUES (NULL, 'But Books', 'Please buy books from Store', current_timestamp());
 $insert = false;
 $update = false;
@@ -12,7 +12,7 @@ $delete = false;
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "notes";  
+$database = "academic_records";  
 
 // Create a connection
 $conn = mysqli_connect($servername, $username, $password, $database);
@@ -25,18 +25,19 @@ if (!$conn){
 if(isset($_GET['delete'])){
   $sno = $_GET['delete'];
   $delete = true;
-  $sql = "DELETE FROM `notes` WHERE `sno` = $sno";
+  $sql = "DELETE FROM `userdata` WHERE `sno` = $sno";
   $result = mysqli_query($conn, $sql);
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-if (isset( $_POST['snoEdit'])){
+if (isset( $_POST["snoEdit"])){
   // Update the record
     $sno = $_POST["snoEdit"];
-    $title = $_POST["titleEdit"];
-    $description = $_POST["descriptionEdit"];
+    $Emailid = $_POST["titleEdit"];
+    $Password = $_POST["descriptionEdit"];
+    $Type = $_POST["type1Edit"];
 
   // Sql query to be executed
-  $sql = "UPDATE `notes` SET `title` = '$title' , `description` = '$description' WHERE `notes`.`sno` = $sno";
+  $sql = "UPDATE `userdata` SET `Emailid` = '$Emailid', `Password` = '$Password', `Type` = '$Type' WHERE `userdata`.`sno` = $sno";
   $result = mysqli_query($conn, $sql);
   if($result){
     $update = true;
@@ -46,11 +47,12 @@ else{
 }
 }
 else{
-    $title = $_POST["title"];
-    $description = $_POST["description"];
+    $Emailid = $_POST["title"];
+    $Password = $_POST["description"];
+    $Type = $_POST["type1"];
 
   // Sql query to be executed
-  $sql = "INSERT INTO `notes` (`title`, `description`) VALUES ('$title', '$description')";
+  $sql = "INSERT INTO `userdata` (`Emailid`, `Password`, `Type`) VALUES ('$Emailid', '$Password', '$Type')";
   $result = mysqli_query($conn, $sql);
 
    
@@ -82,7 +84,7 @@ else{
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 
 
-  <title>iNotes - Notes taking made easy</title>
+  <title>User Updates</title>
   <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
@@ -229,7 +231,7 @@ textarea{
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="editModalLabel">Edit this Note</h5>
+          <h5 class="modal-title" id="editModalLabel">Edit this User Data</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
@@ -238,13 +240,18 @@ textarea{
           <div class="modal-body">
             <input type="hidden" name="snoEdit" id="snoEdit">
             <div class="form-group">
-              <label for="title">Note Title</label>
+              <label for="title">Email-Id</label>
               <input type="text" class="form-control" id="titleEdit" name="titleEdit" aria-describedby="emailHelp">
             </div>
 
             <div class="form-group">
-              <label for="desc" class="notedesc">Note Description</label>
-              <textarea class="form-control" id="descriptionEdit" name="descriptionEdit"rows="2" ></textarea>
+              <label for="desc" class="notedesc">Password</label>
+              <textarea class="form-control" id="descriptionEdit" name="descriptionEdit"rows="1" ></textarea>
+            </div> 
+
+            <div class="form-group">
+              <label for="desc" class="notedesc">Type(teacher/admin/student)</label>
+              <textarea class="form-control" id="type1Edit" name="type1Edit" rows="1" ></textarea>
             </div> 
           </div>
           <div class="modal-footer d-block mr-auto">
@@ -286,7 +293,7 @@ textarea{
   <?php
   if($insert){
     echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-    <strong>Success!</strong> Your note has been inserted successfully
+    <strong>Success!</strong> Your user data has been inserted successfully
     <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
       <span aria-hidden='true'>×</span>
     </button>
@@ -296,7 +303,7 @@ textarea{
   <?php
   if($delete){
     echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-    <strong>Success!</strong> Your note has been deleted successfully
+    <strong>Success!</strong> Your user data has been deleted successfully
     <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
       <span aria-hidden='true'>×</span>
     </button>
@@ -306,7 +313,7 @@ textarea{
   <?php
   if($update){
     echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-    <strong>Success!</strong> Your note has been updated successfully
+    <strong>Success!</strong> Your user data has been updated successfully
     <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
       <span aria-hidden='true'>×</span>
     </button>
@@ -315,17 +322,22 @@ textarea{
   ?>
   <div class="container uuflex my-4">
     <h2 class="uuhd">User Updates</h2>
-    <form action="/crud/index.php" method="POST">
+    <form action="userupdate.php" method="POST">
       <div class="form-group">
-        <label for="title" class="notetitle">Note Title</label>
+        <label for="title" class="notetitle">Email-Id</label>
         <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp">
       </div>
 
       <div class="form-group">
-        <label for="desc" class="notedesc">Note Description</label>
-        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+        <label for="desc" class="notedesc">Password</label>
+        <textarea class="form-control" id="description" name="description" rows="1"></textarea>
       </div>
-      <button type="submit" class="btn addnotebtn">Add Note</button>
+
+      <div class="form-group">
+        <label for="title" class="notetitle">Type (teacher/admin/student)</label>
+        <input type="text" class="form-control" id="type1" name="type1">
+      </div>
+      <button type="submit" class="btn addnotebtn">Add Data</button>
     </form>
   </div>
 
@@ -336,22 +348,24 @@ textarea{
       <thead>
         <tr>
           <th scope="col">S.No</th>
-          <th scope="col">Title</th>
-          <th scope="col">Description</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+          <th scope="col">Type</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
         <?php 
-          $sql = "SELECT * FROM `notes`";
+          $sql = "SELECT * FROM `userdata`";
           $result = mysqli_query($conn, $sql);
           $sno = 0;
           while($row = mysqli_fetch_assoc($result)){
             $sno = $sno + 1;
             echo "<tr>
             <th scope='row'>". $sno . "</th>
-            <td>". $row['title'] . "</td>
-            <td>". $row['description'] . "</td>
+            <td>". $row['Emailid'] . "</td>
+            <td>". $row['Password'] . "</td>
+            <td>". $row['Type'] . "</td>
             <td><button class='edit btn btn-sm btn-primary editbtn' id=".$row['sno'].">Edit</button> <button class='delete btn btn-sm btn-primary delbtn' id=d".$row['sno'].">Delete</button>  </td>
           </tr>";
         } 
@@ -408,9 +422,11 @@ textarea{
         tr = e.target.parentNode.parentNode;
         title = tr.getElementsByTagName("td")[0].innerText;
         description = tr.getElementsByTagName("td")[1].innerText;
-        console.log(title, description);
+        type = tr.getElementsByTagName("td")[2].innerText;
+        console.log(title, description, type);
         titleEdit.value = title;
         descriptionEdit.value = description;
+        type1Edit.value = type;
         snoEdit.value = e.target.id;
         console.log(e.target.id)
         $('#editModal').modal('toggle');
@@ -423,9 +439,9 @@ textarea{
         console.log("edit ");
         sno = e.target.id.substr(1);
 
-        if (confirm("Are you sure you want to delete this note!")) {
+        if (confirm("Are you sure you want to delete this data?")) {
           console.log("yes");
-          window.location = `/crud/index.php?delete=${sno}`;
+          window.location = `userupdate.php?delete=${sno}`;
           // TODO: Create a form and use post request to submit a form
         }
         else {
