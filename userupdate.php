@@ -163,11 +163,12 @@ footer{
 
 .uuhd{
     font-family: 'Marcellus';
-    font-size:32px;
+    font-size:45px;
     display: flex;
     justify-content: center;
     margin-top: 7px;
     font-style: bold;
+    margin-right: 150px;
 }
 
 .notetitle,.notedesc{
@@ -321,7 +322,12 @@ textarea{
   }
   ?>
   <div class="container uuflex my-4">
-    <h2 class="uuhd">User Updates</h2>
+    <div class="logo"><!--2 clg logos-->
+            <img src="svu_kjsce.jpg" alt="SVU-KJSCE" class="logo1">
+            <h2 class="uuhd">User Updates</h2>
+            <img src="somaiya_trust.png" alt="Somaiya-trust" class="logo2">
+        </div>
+    <br>
     <form action="userupdate.php" method="POST">
       <div class="form-group">
         <label for="title" class="notetitle">Email-Id</label>
@@ -379,10 +385,7 @@ textarea{
     
     
     <footer>
-        <div class="logo"><!--2 clg logos-->
-            <img src="svu_kjsce.jpg" alt="SVU-KJSCE" class="logo1">
-            <img src="somaiya_trust.png" alt="Somaiya-trust" class="logo2">
-        </div>
+        
         <div class="footer1">.<!--don't remove this dot/fullstop--></div><!--light red small rectangle-->
         <div class="footer2"><!--dark red big rectangle with 5 social media icons-->
             <div class="social">
