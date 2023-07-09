@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2023 at 07:02 PM
+-- Generation Time: Jul 09, 2023 at 01:18 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -58,7 +58,8 @@ INSERT INTO `linksdata` (`id`, `Year`, `Branch`, `Type`, `Link`, `date`, `facult
 (10, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Twitha', 4, 'Mini Project'),
 (11, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Mitha', 4, 'Mini Project'),
 (22, 2023, 'COMPS', 'LAB_Writeups', '64a9956cc9290_finalish-vat.pdf', '2023-07-08', 'Latha', 4, 'Mini Project'),
-(23, 2023, 'COMPS', 'LAB_Writeups', '64a99590ae95a_vat.docx', '2023-07-08', 'Latha', 4, 'Mini Project');
+(23, 2023, 'COMPS', 'LAB_Writeups', '64a99590ae95a_vat.docx', '2023-07-08', 'Latha', 4, 'Mini Project'),
+(24, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64aa971308c65_classify detect adversial.pdf', '2023-07-09', 'Latha', 4, 'Mini Project');
 
 -- --------------------------------------------------------
 
@@ -252,9 +253,10 @@ INSERT INTO `subjectdata` (`Semester`, `Branch`, `Subject`, `Year`) VALUES
 --
 
 CREATE TABLE `userdata` (
-  `Emailid` varchar(255) NOT NULL,
-  `Password` varchar(255) NOT NULL,
-  `Type` enum('student','teacher','admin') NOT NULL,
+  `sno` int(11) NOT NULL,
+  `Emailid` varchar(50) NOT NULL,
+  `Password` text NOT NULL,
+  `Type` text NOT NULL,
   `name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -262,9 +264,10 @@ CREATE TABLE `userdata` (
 -- Dumping data for table `userdata`
 --
 
-INSERT INTO `userdata` (`Emailid`, `Password`, `Type`, `name`) VALUES
-('bhavya@gmail.com', 'bhavya', 'student', 'Bhavya'),
-('latha@gmail.com', 'latha123', 'teacher', 'Latha');
+INSERT INTO `userdata` (`sno`, `Emailid`, `Password`, `Type`, `name`) VALUES
+(1, 'admin@somaiya.edu', 'admin123', 'admin', 'admin'),
+(2, 'teacher@somaiya.edu', 'teacher123', 'teacher', 'Latha'),
+(3, 'student@somaiya.edu', 'student123', 'student', 'Bhavya');
 
 --
 -- Indexes for dumped tables
@@ -280,7 +283,7 @@ ALTER TABLE `linksdata`
 -- Indexes for table `userdata`
 --
 ALTER TABLE `userdata`
-  ADD PRIMARY KEY (`Emailid`);
+  ADD PRIMARY KEY (`sno`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -290,24 +293,14 @@ ALTER TABLE `userdata`
 -- AUTO_INCREMENT for table `linksdata`
 --
 ALTER TABLE `linksdata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
-DROP TABLE `userdata`;
-
-CREATE TABLE `academic_records`.`userdata` 
-(`sno` INT NOT NULL AUTO_INCREMENT , 
-`Emailid` VARCHAR(50) NOT NULL , 
-`Password` TEXT NOT NULL , 
-`Type` TEXT NOT NULL , 
-PRIMARY KEY (`sno`)) 
-ENGINE = InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-INSERT INTO `userdata` (`sno`, `Emailid`, `Password`, `Type`) VALUES (NULL, 'admin@somaiya.edu', 'admin123', 'admin');
-INSERT INTO `userdata` (`sno`, `Emailid`, `Password`, `Type`) VALUES (NULL, 'teacher@somaiya.edu', 'teacher123', 'teacher');
-INSERT INTO `userdata` (`sno`, `Emailid`, `Password`, `Type`) VALUES (NULL, 'student@somaiya.edu', 'student123', 'student');
-
+--
+-- AUTO_INCREMENT for table `userdata`
+--
+ALTER TABLE `userdata`
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
-
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
