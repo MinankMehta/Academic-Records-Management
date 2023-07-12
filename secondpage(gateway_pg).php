@@ -16,7 +16,7 @@
         $_SESSION["year"] = $year;
         $_SESSION["branch"] = $branch;
 
-        header("location: subjects.php");
+        header("location: subjects-final.php");
         exit();
     }
 ?>
