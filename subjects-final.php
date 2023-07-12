@@ -50,7 +50,7 @@
                         while ($row = mysqli_fetch_assoc($result)) 
                         {
                             $subject_name = $row['subject'];
-                            echo "<a href='?subject=$subject_name'><div class='flex-item'><img src='imgonline-com-ua-ReplaceColor-NuklzGozErJK-removebg-preview.png' alt='File' height='77' width='100'><br>$subject_name</div></a>";
+                            echo "<div class='flex-item'><a href='?subject=$subject_name'><img src='imgonline-com-ua-ReplaceColor-NuklzGozErJK-removebg-preview.png' alt='File' height='77' width='100'><br>$subject_name</a></div>";
                         }
                 }
 
