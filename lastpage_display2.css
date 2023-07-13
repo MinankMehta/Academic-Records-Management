@@ -92,12 +92,13 @@ footer{
     max-height: 70%;
     min-height: fit-content;
     /* overflow-y: auto; */
-    width: max-content;
+    width: 50%;
     overflow-y: scroll;
     scroll-behavior: smooth;
     padding: 1% 0 1% 0.5%;
     border-radius: 12px;
     display: flex;
+    margin: 10vh;
     justify-content: center;
     bottom: 7%;
 }
@@ -160,4 +161,201 @@ td{
     text-align: center;
     text-decoration: none;
     cursor: pointer;
+}
+
+/*upload delete*/
+
+.upload-delete-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    width: 50%;
+    margin-bottom: 18vh;
+    /* bottom: 20%; */
+    /* flex-wrap: wrap; */
+    /* margin:12% 6%; */
+}
+
+.button.collapsible.active{
+    border-radius: 0;
+    /* border-bottom-left-radius: 0 ;
+    border-bottom-rightt-radius: 0 ; */
+}
+
+.upload,.delete{
+    min-width: 15em;
+    position:relative;
+    margin: 10vh;
+    /* margin:2em;    */
+}
+
+.upload *{
+    box-sizing: border-box;
+}
+.delete *{
+    box-sizing: border-box;
+}
+
+
+.collapsible,.collapsible2{
+    background-color: #b7202e;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    /* margin-left: 3%; */
+    border-radius: 12px;
+}
+
+.active{
+    background-color: #b7202e;
+    font-weight: bolder;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.collapsible:hover,.collapsible2:hover {
+    font-weight: bolder;
+    background-color: #b7202e;
+    box-shadow: 0 0 0.8em #26489a;
+    font-weight: bolder;
+}
+
+label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+input,select
+{
+    margin: 10px 0 0 0;
+    width: 60%;
+    min-height: 2em;
+}
+
+input{
+    background-color: #b7202e;
+    border: 1px solid #b7202e;
+    color: #ffffff;
+}
+
+.btn2{
+    border: none;
+    color:white;
+    background-color: #b7202e;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 2%;
+    /* margin: 4px 2px; */
+    cursor: pointer;
+    width: 50%;
+    border-radius: 12px;
+}
+
+.content {
+    padding:18px;
+    width:100%;
+    /* margin-left:3%; */
+    display: none;
+    overflow: hidden;
+    background-color: white;
+    transition: ease-in;
+    border-radius: 12px;
+    border-top-right-radius:0 ;
+    border-top-left-radius:0 ;
+}
+/* 
+.collapsible2{
+    background-color: #b7202e;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    margin-left: 55%;
+    margin-right: 3%;
+} */
+
+
+.content2 {
+    padding:18px;
+    width:100%;
+    /* margin-left:55%; */
+    /* margin-right: 7%; */
+    border-radius: 12px;    
+    display: none;
+    overflow: hidden;
+    background-color: white;
+    transition: ease-in;
+    border-top-right-radius:0 ;
+    border-top-left-radius:0 ;
+}
+
+/* .choosefile::-webkit-file-upload-button{
+    visibility: hidden;
+}
+
+.choosefile::before{
+    content: 'Choose file to be uploaded';
+    display: inline-block;
+    padding-left: 3%;
+    white-space: nowrap;
+    display: inline-block;
+    -webkit-user-select: none;
+    cursor: pointer;
+    color: #58595b;
+    width: fit-content;
+    
+} */
+
+input{
+    background-color: white;
+    color: black;
+    border: 1px solid #58595b;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+input[type=file]::file-selector-button {
+    padding: 3%;
+    /* content: 'Choose file to be uploaded'; */
+    background-color: white;
+    font-weight: bolder;
+    border: none;
+}
+  
+input[type=file]::file-selector-button:hover {
+    cursor: pointer;
+}
+
+input[type=text]{
+    padding-left: 3%;
+    color: black;
+    font-size: 1.68vh;
+    background-color: white;
+}
+
+#label{
+    font-weight: bolder;
+    margin-right: 2vw;
+}
+
+.content2 select{
+    font-size: 2vh;
 }

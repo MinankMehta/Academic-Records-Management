@@ -28,7 +28,7 @@
     }
 
 
-   $servername = "localhost";
+$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "academic_records";
@@ -68,17 +68,18 @@ $dbname = "academic_records";
     <title>RECORDS</title>
 </head>
 <body>
-   <div class="container">
+<div class="container">
     <div class="table-container">
         <!-- <table class="table"> -->
         <table>
             <thead>
                 <tr>
                     <th class="the">Sr No.</th>
+                    <th class="the">Title</th>
                     <?php if ($_SESSION['type'] == 'teacher'): ?>
                         <th class="the">Upload Date</th>
                         <th class="the">Faculty Name</th>
-                        <th class="the">Upload File</th>
+                        <!-- <th class="the">Upload File</th> -->
                     <?php endif; ?>
                     <th class="the">View</th>
                 </tr>
@@ -87,16 +88,17 @@ $dbname = "academic_records";
                 <?php while ($stmt->fetch()) { ?>
                     <tr>
                         <td data-label="Sr No."><?php echo $serialNumber; ?></td>
+                        <td>MEOW</td>
                         <?php if ($_SESSION['type'] == 'teacher'): ?>
                             <td data-label="Upload Date"><?php echo $uploadDate; ?></td>
                             <td data-label="Faculty Name"><?php echo $facultyName; ?></td>
-                            <td data-label="Upload File">
+                            <!-- <td data-label="Upload File">
                                 <form method="POST" enctype="multipart/form-data">
                                     <input type="hidden" name="link_id" value="<?php echo $serialNumber; ?>">
                                     <input type="file" name="file_upload" accept=".pdf,.doc,.docx">
                                     <button type="submit" class="btn">Upload</button>
                                 </form>
-                            </td>
+                            </td> -->
                         <?php endif; ?>
                         <td data-label="Link">
                             <a href="<?php echo $link; ?>" class="btn">Link</a>
@@ -107,6 +109,38 @@ $dbname = "academic_records";
         </table>
     </div>
 </div>
+
+<?php if ($_SESSION['type'] == 'teacher'): ?>
+<div class="upload-delete-container">
+    <div class="upload">
+        <button type="button" class="collapsible">UPLOAD FILES</button>
+        <div class="content">
+            <form method="POST" class="form" enctype="multipart/form-data">
+                <input type="text" placeholder="Enter File Name">
+                <input type="hidden" name="link_id" value="<?php echo $serialNumber; ?>">
+                <input type="file" class="choosefile" name="file_upload" accept=".pdf,.doc,.docx">
+                <button type="submit" class="btn2">Upload</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="delete">
+        <button type="button" class="collapsible2">DELETE FILES</button>
+        <div class="content2">
+            <label for="referrer" id="label">Select the file you want to delete
+                <select id="referrer" name="referrer">
+                    <option value="">Select one</option>
+                    <option value="1">Mini Project1</option>
+                    <option value="2">Mini Project2</option>
+                    <option value="3">Mini Project3</option>
+                    <option value="4">Mini Project4</option>
+                </select>
+                <button type="submit" class="btn2">Delete</button>
+            </label>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
 
 <footer>
     <div class="logo"><!--2 clg logos-->
@@ -124,7 +158,7 @@ $dbname = "academic_records";
         </div>
     </div>
 </footer>
-
+<script src="display2.js"></script>
 </body>
 </html>
 
