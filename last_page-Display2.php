@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-
+		$serial=1;
 	if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
         header("Location: login.php"); 
         exit();
@@ -87,7 +87,7 @@ $dbname = "academic_records";
             <tbody>
                 <?php while ($stmt->fetch()) { ?>
                     <tr>
-                        <td data-label="Sr No."><?php echo $serialNumber; ?></td>
+                        <td data-label="Sr No."><?php echo $serial; $serial=$serial+1; ?></td>
                         <td>MEOW</td>
                         <?php if ($_SESSION['type'] == 'teacher'): ?>
                             <td data-label="Upload Date"><?php echo $uploadDate; ?></td>
