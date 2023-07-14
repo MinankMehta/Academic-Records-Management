@@ -119,24 +119,44 @@ $dbname = "academic_records";
                 <input type="text" placeholder="Enter File Name">
                 <input type="hidden" name="link_id" value="<?php echo $serialNumber; ?>">
                 <input type="file" class="choosefile" name="file_upload" accept=".pdf,.doc,.docx">
-                <button type="submit" class="btn2">Upload</button>
+                <button type="submit" class="btn2" name="upload">Upload</button>
             </form>
         </div>
     </div>
 
+    
     <div class="delete">
         <button type="button" class="collapsible2">DELETE FILES</button>
         <div class="content2">
-            <label for="referrer" id="label">Select the file you want to delete
-                <select id="referrer" name="referrer">
-                    <option value="">Select one</option>
-                    <option value="1">Mini Project1</option>
-                    <option value="2">Mini Project2</option>
-                    <option value="3">Mini Project3</option>
-                    <option value="4">Mini Project4</option>
-                </select>
-                <button type="submit" class="btn2">Delete</button>
-            </label>
+            <form method="POST" class="form" enctype="application/x-www-form-urlencoded">
+                <label for="referrer" id="label">Select the file you want to delete
+                    <select id="referrer" name="referrer">
+                        <option value="">Select one</option>
+                        <?php
+                        // Retrieve files based on faculty name, year, subject, etc.
+                        $facultyName = $_SESSION['username'];
+                        $year = $_SESSION['year'];
+                        $semester = $_SESSION['semester'];
+                        $branch = $_SESSION['branch'];
+                        $subject = $_SESSION['subject'];
+
+                        $stmt = $conn->prepare("SELECT link FROM linksdata WHERE faculty_name = ? AND year = ? AND semester = ? AND branch = ? AND subject = ?");
+                        $stmt->bind_param("sssss", $facultyName, $year, $semester, $branch, $subject);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+
+                        // Generate options based on the retrieved files
+                        while ($row = $result->fetch_assoc()) {
+                            $link = $row['link'];
+                            echo "<option value='$link'>$link</option>";
+                        }
+
+                        $stmt->close();
+                        ?>
+                    </select>
+                    <button type="submit" class="btn2" name="delete">Delete</button>
+                </label>
+            </form>
         </div>
     </div>
 </div>
@@ -166,7 +186,7 @@ $dbname = "academic_records";
 <?php
 
     // Check if the form was submitted
-   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+   if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['upload'])){
     // Handle file upload logic
     if ($_SESSION['type'] === 'teacher') {
         // Check if a file was uploaded
@@ -204,6 +224,32 @@ $stmt->close();
         } else {
             // No file uploaded or file upload error occurred
             echo "Error: Please select a file to upload.";
+        }
+    }
+}
+?>
+
+<?php
+// Check if the delete button was clicked
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
+    // Get the selected file to delete
+    $selectedFile = $_POST['referrer'];
+
+    if (!empty($selectedFile)) {
+        // Delete the file from the database
+        $stmt = $conn->prepare("DELETE FROM linksdata WHERE link = ?");
+        $stmt->bind_param("s", $selectedFile);
+        $stmt->execute();
+        $stmt->close();
+
+        // Delete the file from the file system
+       $filePath = $selectedFile;
+
+        if (file_exists($filePath)) {
+            unlink($filePath);
+            echo "File deleted successfully.";
+        } else {
+            echo "Error: File not found.";
         }
     }
 }

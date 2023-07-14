@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 09, 2023 at 01:18 PM
+-- Generation Time: Jul 14, 2023 at 07:18 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -48,18 +48,16 @@ CREATE TABLE `linksdata` (
 INSERT INTO `linksdata` (`id`, `Year`, `Branch`, `Type`, `Link`, `date`, `faculty_name`, `semester`, `subject`) VALUES
 (1, 2023, 'COMPS', 'ISE_papers\r\n', 'https://workspace.google.com/intl/en_in/lp/drive/?utm_source=bing&utm_medium=cpc&utm_campaign=1605214-Workspace-APAC-IN-en-BKWS-EXA-LV&utm_content=text-ad-none-none-DEV_c-CRE_-ADGP_Hybrid%20%7C%20BKWS%20-%20EXA%20%7C%20Txt_Drive-KWID_43700072096398946-kwd', '2023-07-04', 'Latha', 2, 'Workshop'),
 (2, 2023, 'COMPS', 'ISE_papers', 'https://drive.google.com/file/d/13cPN7QTNXCINzPbtopfUkECW48vLFC24/view?usp=drive_link', '2023-07-04', 'Umang', 4, 'Analysis of Algorithms'),
-(3, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-07-05', 'Lalitha', 3, 'Data Structures'),
-(4, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Rohini', 4, 'Mini Project'),
-(5, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Rohini', 4, 'Mini Project'),
-(6, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Latha', 4, 'Mini Project'),
-(7, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Ratha', 4, 'Mini Project'),
-(8, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Patha', 4, 'Mini Project'),
-(9, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Pitha', 4, 'Mini Project'),
-(10, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Twitha', 4, 'Mini Project'),
-(11, 2023, 'COMPS', 'Lab_Writeups', 'https://meet.google.com/', '2023-06-05', 'Mitha', 4, 'Mini Project'),
-(22, 2023, 'COMPS', 'LAB_Writeups', '64a9956cc9290_finalish-vat.pdf', '2023-07-08', 'Latha', 4, 'Mini Project'),
-(23, 2023, 'COMPS', 'LAB_Writeups', '64a99590ae95a_vat.docx', '2023-07-08', 'Latha', 4, 'Mini Project'),
-(24, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64aa971308c65_classify detect adversial.pdf', '2023-07-09', 'Latha', 4, 'Mini Project');
+(33, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0c3136d3a9_2107.04448v1.pdf', '2023-07-14', 'Latha', 4, 'Mini Project'),
+(34, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0c31979729_1507.00677v9.pdf', '2023-07-14', 'Radha', 4, 'Mini Project'),
+(35, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0c31fa7eac_vat.docx', '2023-07-14', 'Latha', 4, 'Mini Project'),
+(36, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0c351e5ff9_vat-colloqial.pdf', '2023-07-14', 'Umang', 4, 'Mini Project'),
+(37, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0c3a6ddc6c_joshi22b_interspeech (1).pdf', '2023-07-14', 'Latha', 4, 'Mini Project'),
+(38, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0d9b399cd1_virtual adversial training -vat -varrshinie-internship.pdf', '2023-07-14', 'Priya', 4, 'Mini Project'),
+(39, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0d9cd4e721_vat.docx', '2023-07-14', 'Latha', 4, 'Mini Project'),
+(40, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0da0a5e2f5_classify detect adversial.pdf', '2023-07-14', 'Latha', 4, 'Mini Project'),
+(41, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0da1836f5e_classify detect adversial.pdf', '2023-07-14', 'Latha', 4, 'Mini Project'),
+(42, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0da20912c2_virtual adversial training -vat -varrshinie-internship.pdf', '2023-07-14', 'Latha', 4, 'Mini Project');
 
 -- --------------------------------------------------------
 
@@ -293,7 +291,7 @@ ALTER TABLE `userdata`
 -- AUTO_INCREMENT for table `linksdata`
 --
 ALTER TABLE `linksdata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `userdata`
