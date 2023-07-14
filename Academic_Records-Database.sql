@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2023 at 07:18 AM
+-- Generation Time: Jul 14, 2023 at 09:22 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -35,6 +35,7 @@ CREATE TABLE `linksdata` (
   `Branch` varchar(255) DEFAULT NULL,
   `Type` varchar(255) NOT NULL,
   `Link` varchar(255) NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
   `date` date DEFAULT NULL,
   `faculty_name` varchar(255) DEFAULT NULL,
   `semester` int(11) DEFAULT NULL,
@@ -45,19 +46,17 @@ CREATE TABLE `linksdata` (
 -- Dumping data for table `linksdata`
 --
 
-INSERT INTO `linksdata` (`id`, `Year`, `Branch`, `Type`, `Link`, `date`, `faculty_name`, `semester`, `subject`) VALUES
-(1, 2023, 'COMPS', 'ISE_papers\r\n', 'https://workspace.google.com/intl/en_in/lp/drive/?utm_source=bing&utm_medium=cpc&utm_campaign=1605214-Workspace-APAC-IN-en-BKWS-EXA-LV&utm_content=text-ad-none-none-DEV_c-CRE_-ADGP_Hybrid%20%7C%20BKWS%20-%20EXA%20%7C%20Txt_Drive-KWID_43700072096398946-kwd', '2023-07-04', 'Latha', 2, 'Workshop'),
-(2, 2023, 'COMPS', 'ISE_papers', 'https://drive.google.com/file/d/13cPN7QTNXCINzPbtopfUkECW48vLFC24/view?usp=drive_link', '2023-07-04', 'Umang', 4, 'Analysis of Algorithms'),
-(33, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0c3136d3a9_2107.04448v1.pdf', '2023-07-14', 'Latha', 4, 'Mini Project'),
-(34, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0c31979729_1507.00677v9.pdf', '2023-07-14', 'Radha', 4, 'Mini Project'),
-(35, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0c31fa7eac_vat.docx', '2023-07-14', 'Latha', 4, 'Mini Project'),
-(36, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0c351e5ff9_vat-colloqial.pdf', '2023-07-14', 'Umang', 4, 'Mini Project'),
-(37, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0c3a6ddc6c_joshi22b_interspeech (1).pdf', '2023-07-14', 'Latha', 4, 'Mini Project'),
-(38, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0d9b399cd1_virtual adversial training -vat -varrshinie-internship.pdf', '2023-07-14', 'Priya', 4, 'Mini Project'),
-(39, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0d9cd4e721_vat.docx', '2023-07-14', 'Latha', 4, 'Mini Project'),
-(40, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0da0a5e2f5_classify detect adversial.pdf', '2023-07-14', 'Latha', 4, 'Mini Project'),
-(41, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0da1836f5e_classify detect adversial.pdf', '2023-07-14', 'Latha', 4, 'Mini Project'),
-(42, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0da20912c2_virtual adversial training -vat -varrshinie-internship.pdf', '2023-07-14', 'Latha', 4, 'Mini Project');
+INSERT INTO `linksdata` (`id`, `Year`, `Branch`, `Type`, `Link`, `title`, `date`, `faculty_name`, `semester`, `subject`) VALUES
+(1, 2023, 'COMPS', 'ISE_papers\r\n', 'https://workspace.google.com/intl/en_in/lp/drive/?utm_source=bing&utm_medium=cpc&utm_campaign=1605214-Workspace-APAC-IN-en-BKWS-EXA-LV&utm_content=text-ad-none-none-DEV_c-CRE_-ADGP_Hybrid%20%7C%20BKWS%20-%20EXA%20%7C%20Txt_Drive-KWID_43700072096398946-kwd', NULL, '2023-07-04', 'Latha', 2, 'Workshop'),
+(2, 2023, 'COMPS', 'ISE_papers', 'https://drive.google.com/file/d/13cPN7QTNXCINzPbtopfUkECW48vLFC24/view?usp=drive_link', NULL, '2023-07-04', 'Umang', 4, 'Analysis of Algorithms'),
+(50, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0f72a1afb0_8100e1-evaluation-resource-first-speech.pdf', '8100e1-evaluation-resource-first-speech.pdf', '2023-07-14', 'Latha', 4, 'Mini Project'),
+(51, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0f73048766_joshi22b_interspeech (1).pdf', 'joshi22b_interspeech (1).pdf', '2023-07-14', 'Latha', 4, 'Mini Project'),
+(52, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0f73792a37_classify detect adversial.pdf', 'classify detect adversial.pdf', '2023-07-14', 'Umang', 4, 'Mini Project'),
+(53, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0f73d1c136_2107.04448v1.pdf', '2107.04448v1.pdf', '2023-07-14', 'Latha', 4, 'Mini Project'),
+(54, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0f742a4ac7_1507.00677v9.pdf', '1507.00677v9.pdf', '2023-07-14', 'Latha', 4, 'Mini Project'),
+(55, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0f7494e691_vat.docx', 'vat.docx', '2023-07-14', 'Priya', 4, 'Mini Project'),
+(56, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0f7514434d_finalish-vat.pdf', 'finalish-vat.pdf', '2023-07-14', 'Varrshinie', 4, 'Mini Project'),
+(57, 2023, 'COMPS', 'LAB_Writeups', 'Academic_Records/linksdata/64b0f758021ac_vat-colloqial.pdf', 'vat-colloqial.pdf', '2023-07-14', 'Latha', 4, 'Mini Project');
 
 -- --------------------------------------------------------
 
@@ -291,7 +290,7 @@ ALTER TABLE `userdata`
 -- AUTO_INCREMENT for table `linksdata`
 --
 ALTER TABLE `linksdata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `userdata`

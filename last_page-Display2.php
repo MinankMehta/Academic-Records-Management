@@ -42,19 +42,19 @@ $dbname = "academic_records";
     }
 
     // Prepare the query
-    $query = "SELECT id, link, date, faculty_name FROM linksdata WHERE semester = ? AND year = ? AND branch = ? AND type = ? AND subject= ?";
+    $query = "SELECT id, link, date, faculty_name,title FROM linksdata WHERE semester = ? AND year = ? AND branch = ? AND type = ? AND subject= ?";
     
     // Prepare the statement
     $stmt = $conn->prepare($query);
     
     // Bind the session variables to the statement parameters
-    $stmt->bind_param("sssss", $_SESSION['semester'], $_SESSION['year'], $_SESSION['branch'],  $_SESSION['option'],$_SESSION['subject'] );
+    $stmt->bind_param("sssss", $_SESSION['semester'], $_SESSION['year'], $_SESSION['branch'],  $_SESSION['option'],$_SESSION['subject']);
     
     // Execute the statement
     $stmt->execute();
     
     // Bind the result variables
-    $stmt->bind_result($serialNumber, $link, $uploadDate, $facultyName);
+    $stmt->bind_result($serialNumber, $link, $uploadDate, $facultyName,$title);
 ?>
 
 <!DOCTYPE html>
@@ -88,7 +88,7 @@ $dbname = "academic_records";
                 <?php while ($stmt->fetch()) { ?>
                     <tr>
                         <td data-label="Sr No."><?php echo $serial; $serial=$serial+1; ?></td>
-                        <td>MEOW</td>
+                        <td><?php echo $title; ?></td>
                         <?php if ($_SESSION['type'] == 'teacher'): ?>
                             <td data-label="Upload Date"><?php echo $uploadDate; ?></td>
                             <td data-label="Faculty Name"><?php echo $facultyName; ?></td>
@@ -211,8 +211,8 @@ $option=$_SESSION['option'];
 $semester=$_SESSION['semester'];
 $year=$_SESSION['year'];
 
-$stmt = $conn->prepare("INSERT INTO linksdata (link, date, faculty_name, subject,branch,semester,type,year) VALUES (?, ?, ?, ?,?,?,?,?)");
-$stmt->bind_param("ssssssss", $link, $date, $facultyName, $subject,$branch,$semester,$option,$year);
+$stmt = $conn->prepare("INSERT INTO linksdata (link, date, faculty_name, subject,branch,semester,type,year,title) VALUES (?, ?, ?, ?,?,?,?,?,?)");
+$stmt->bind_param("sssssssss", $link, $date, $facultyName, $subject,$branch,$semester,$option,$year,$_FILES['file_upload']['name']);
 $stmt->execute();
 $stmt->close();
            echo "upload_success";
