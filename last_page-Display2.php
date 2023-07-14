@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-
+		$serial=1;
 	if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
         header("Location: login.php"); 
         exit();
@@ -42,13 +42,13 @@ $dbname = "academic_records";
     }
 
     // Prepare the query
-    $query = "SELECT id, link, date, faculty_name FROM linksdata WHERE semester = ? AND year = ? AND branch = ? AND type = ? AND subject= ?";
+    $query = "SELECT id, link, date, faculty_name,title FROM linksdata WHERE semester = ? AND year = ? AND branch = ? AND type = ? AND subject= ?";
     
     // Prepare the statement
     $stmt = $conn->prepare($query);
     
     // Bind the session variables to the statement parameters
-    $stmt->bind_param("sssss", $_SESSION['semester'], $_SESSION['year'], $_SESSION['branch'],  $_SESSION['option'],$_SESSION['subject'] );
+    $stmt->bind_param("sssss", $_SESSION['semester'], $_SESSION['year'], $_SESSION['branch'],  $_SESSION['option'],$_SESSION['subject']);
     
     // Execute the statement
     $stmt->execute();
@@ -124,7 +124,7 @@ $dbname = "academic_records";
         <button type="button" class="collapsible">UPLOAD FILES</button>
         <div class="content">
             <form method="POST" class="form" enctype="multipart/form-data">
-                <input type="text" placeholder="Enter File Name">
+                <input type="text" placeholder="Enter File Name" name="file_name">
                 <input type="hidden" name="link_id" value="<?php echo $serialNumber; ?>">
                 <input type="file" class="choosefile" name="file_upload" accept=".pdf,.doc,.docx">
                 <button type="submit" class="btn2" name="upload">Upload</button>
@@ -148,15 +148,15 @@ $dbname = "academic_records";
                         $branch = $_SESSION['branch'];
                         $subject = $_SESSION['subject'];
 
-                        $stmt = $conn->prepare("SELECT link FROM linksdata WHERE faculty_name = ? AND year = ? AND semester = ? AND branch = ? AND subject = ?");
+                        $stmt = $conn->prepare("SELECT title FROM linksdata WHERE faculty_name = ? AND year = ? AND semester = ? AND branch = ? AND subject = ?");
                         $stmt->bind_param("sssss", $facultyName, $year, $semester, $branch, $subject);
                         $stmt->execute();
                         $result = $stmt->get_result();
 
                         // Generate options based on the retrieved files
                         while ($row = $result->fetch_assoc()) {
-                            $link = $row['link'];
-                            echo "<option value='$link'>$link</option>";
+                            $title = $row['title'];
+                            echo "<option value='$link'>$title</option>";
                         }
 
                         $stmt->close();
@@ -198,11 +198,12 @@ $dbname = "academic_records";
     // Handle file upload logic
     if ($_SESSION['type'] === 'teacher') {
         // Check if a file was uploaded
+		
         if (isset($_FILES['file_upload']) && $_FILES['file_upload']['error'] === UPLOAD_ERR_OK) {
 
             // Specify the directory to save uploaded files
             $uploadDir = 'Academic_Records/linksdata/';
-
+		$file_name = $_POST['file_name'];
             // Generate a unique file name
             $fileName = uniqid() . '_' . $_FILES['file_upload']['name'];
 
@@ -219,8 +220,10 @@ $option=$_SESSION['option'];
 $semester=$_SESSION['semester'];
 $year=$_SESSION['year'];
 
-$stmt = $conn->prepare("INSERT INTO linksdata (link, date, faculty_name, subject,branch,semester,type,year) VALUES (?, ?, ?, ?,?,?,?,?)");
-$stmt->bind_param("ssssssss", $link, $date, $facultyName, $subject,$branch,$semester,$option,$year);
+
+
+$stmt = $conn->prepare("INSERT INTO linksdata (link, date, faculty_name, subject,branch,semester,type,year,title) VALUES (?, ?, ?, ?,?,?,?,?,?)");
+$stmt->bind_param("sssssssss", $link, $date, $facultyName, $subject,$branch,$semester,$option,$year,$file_name);
 $stmt->execute();
 $stmt->close();
            echo "upload_success";
