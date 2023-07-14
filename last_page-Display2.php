@@ -54,7 +54,9 @@ $dbname = "academic_records";
     $stmt->execute();
     
     // Bind the result variables
-    $stmt->bind_result($serialNumber, $link, $uploadDate, $facultyName);
+    $stmt->bind_result($id, $link, $uploadDate, $facultyName);
+    
+    $counter = 1;
 ?>
 
 <!DOCTYPE html>
@@ -85,9 +87,12 @@ $dbname = "academic_records";
                 </tr>
             </thead>
             <tbody>
-                <?php while ($stmt->fetch()) { ?>
+                <?php 
+                    while ($stmt->fetch()) 
+                    { 
+                ?>
                     <tr>
-                        <td data-label="Sr No."><?php echo $serialNumber; ?></td>
+                        <td data-label="Sr No."><?php echo $counter; ?></td>
                         <td>MEOW</td>
                         <?php if ($_SESSION['type'] == 'teacher'): ?>
                             <td data-label="Upload Date"><?php echo $uploadDate; ?></td>
@@ -104,7 +109,10 @@ $dbname = "academic_records";
                             <a href="<?php echo $link; ?>" class="btn">Link</a>
                         </td>
                     </tr>
-                <?php } ?>
+                <?php 
+                    $counter++;
+                    } 
+                ?>
             </tbody>
         </table>
     </div>
