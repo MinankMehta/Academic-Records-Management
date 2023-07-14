@@ -36,7 +36,7 @@ session_start();
                 <div class="input_box">
                     <input type="password" name="password" placeholder="Enter your password" required />
                     <i class="uil uil-lock password"></i>
-                    <i class="uil uil-eye-slash pw_hide"></i>
+                    <!-- <i class="uil uil-eye-slash pw_hide"></i> -->
                 </div>
 
                 <button class="loginbtn" type="submit">Login Now</button>
