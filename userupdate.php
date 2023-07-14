@@ -1,9 +1,9 @@
 <?php
-// session_start();
-// if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin'] || $_SESSION['type'] === 'student' || $_SESSION['type'] === 'teacher') {
-//       header("Location: login.php"); 
-//       exit();
-//   }
+session_start();
+if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin'] || $_SESSION['type'] === 'student' || $_SESSION['type'] === 'teacher' || $_SESSION['type'] === 'Teacher' || $_SESSION['type'] === 'Student') {
+      header("Location: login.php"); 
+      exit();
+  }
 // INSERT INTO `notes` (`sno`, `title`, `description`, `tstamp`) VALUES (NULL, 'But Books', 'Please buy books from Store', current_timestamp());
 $insert = false;
 $update = false;
@@ -161,13 +161,18 @@ footer{
     background:#58595b;
 }
 
+.uuflex .logo{
+  display: flex;
+}
+
 .uuhd{
     font-family: 'Marcellus';
-    font-size:32px;
+    font-size:40px;
     display: flex;
     justify-content: center;
     margin-top: 7px;
     font-style: bold;
+    text-align:center;
 }
 
 .notetitle,.notedesc{
@@ -321,7 +326,12 @@ textarea{
   }
   ?>
   <div class="container uuflex my-4">
-    <h2 class="uuhd">User Updates</h2>
+    <div class="logo"><!--2 clg logos-->
+        <img src="svu_kjsce.jpg" alt="SVU-KJSCE" class="logo1">
+        <h2 class="uuhd">User Updates</h2>
+        <img src="somaiya_trust.png" alt="Somaiya-trust" class="logo2">
+    </div>
+    <br>
     <form action="userupdate.php" method="POST">
       <div class="form-group">
         <label for="title" class="notetitle">Email-Id</label>
@@ -379,10 +389,7 @@ textarea{
     
     
     <footer>
-        <div class="logo"><!--2 clg logos-->
-            <img src="svu_kjsce.jpg" alt="SVU-KJSCE" class="logo1">
-            <img src="somaiya_trust.png" alt="Somaiya-trust" class="logo2">
-        </div>
+        
         <div class="footer1">.<!--don't remove this dot/fullstop--></div><!--light red small rectangle-->
         <div class="footer2"><!--dark red big rectangle with 5 social media icons-->
             <div class="social">

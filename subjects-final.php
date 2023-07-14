@@ -33,7 +33,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--style.css-->
-    <link rel="stylesheet" href="style_sub.css">
+    <link rel="stylesheet" href="style_sub-final.css">
     <!--fontawesome - for 5 social media icons in footer-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <!-- Unicons -->
@@ -41,37 +41,39 @@
     <title>Subjects</title>
 </head>
 <body class="img">
-    
-    <!-- Home -->
     <section class="home">
-        <div class="roww">
-            <?php
-               if (mysqli_num_rows($result) > 0) 
-               {
-                    while ($row = mysqli_fetch_assoc($result)) 
-                    {
-                        $subject_name = $row['subject'];
-                        echo "<a href='?subject=$subject_name'><div class='form_container'>$subject_name</div></a>";
-                    }
-                }
-
-                // PHP code to handle storing the subject value in session and redirecting based on user type
-                if (isset($_GET['subject'])) 
+        <div class="centre-container">
+            <ul class="flex-container">
+                <?php
+                if (mysqli_num_rows($result) > 0) 
                 {
-                    $_SESSION['subject'] = $_GET['subject'];
-
-                    if ($_SESSION['type'] === 'teacher') {
-                        header("Location: teacher.php"); // Redirect to the teacher.php page for teachers
-                    } elseif ($_SESSION['type'] === 'student') {
-                        header("Location: student.php"); // Redirect to the student.php page for students
-                    } else {
-                        header("Location: teacher.php"); // Redirect to the admin.php page for other user types
-                    }
-                    exit();
+                        while ($row = mysqli_fetch_assoc($result)) 
+                        {
+                            $subject_name = $row['subject'];
+                            echo "<div class='flex-item'><a href='?subject=$subject_name'><img src='imgonline-com-ua-ReplaceColor-NuklzGozErJK-removebg-preview.png' alt='File' height='77' width='100'><br>$subject_name</a></div>";
+                        }
                 }
-            ?>
+
+                    // PHP code to handle storing the subject value in session and redirecting based on user type
+                    if (isset($_GET['subject'])) 
+                    {
+                        $_SESSION['subject'] = $_GET['subject'];
+
+                        if ($_SESSION['type'] === 'teacher') {
+                            header("Location: teacher.php"); // Redirect to the teacher.php page for teachers
+                        } elseif ($_SESSION['type'] === 'student') {
+                            header("Location: student.php"); // Redirect to the student.php page for students
+                        } else {
+                            header("Location: teacher.php"); // Redirect to the admin.php page for other user types
+                        }
+                        exit();
+                    }
+                ?>
+            </ul>
         </div>
     </section>
+
+
 
     <footer>
         <div class="logo"><!--2 clg logos-->
@@ -92,4 +94,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
