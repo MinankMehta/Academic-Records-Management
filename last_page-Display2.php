@@ -1,3 +1,4 @@
+
 <?php
     session_start();
 
@@ -93,7 +94,7 @@ $dbname = "academic_records";
                 ?>
                     <tr>
                         <td data-label="Sr No."><?php echo $counter; ?></td>
-                        <td>MEOW</td>
+                        <td><?php echo $title; ?></td>
                         <?php if ($_SESSION['type'] == 'teacher' || $_SESSION['type'] == 'admin'): ?>
                             <td data-label="Upload Date"><?php echo $uploadDate; ?></td>
                             <td data-label="Faculty Name"><?php echo $facultyName; ?></td>
@@ -256,7 +257,8 @@ $stmt->bind_param("sssssssss", $link, $date, $facultyName, $subject,$branch,$sem
 $stmt->execute();
 $stmt->close();
            echo "upload_success";
-                exit();
+
+               
             } else {
                 // Failed to move the uploaded file
                 echo "Error: Failed to move the uploaded file.";
@@ -266,6 +268,13 @@ $stmt->close();
             echo "Error: Please select a file to upload.";
         }
     }
+
+?><script>
+  
+    window.location.href = window.location.href;
+  
+</script>
+<?php
 }
 ?>
 
@@ -288,9 +297,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
         if (file_exists($filePath)) {
             unlink($filePath);
             echo "File deleted successfully.";
+
+
+
         } else {
             echo "Error: File not found.";
         }
     }
+?><script>
+  
+    window.location.href = window.location.href;
+  
+</script>
+<?php
 }
 ?>
