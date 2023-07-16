@@ -21,7 +21,7 @@
         if ($_SESSION['type'] === 'student') {
             header("Location: student.php");
             exit();
-        } elseif ($_SESSION['type'] === 'teacher') {
+        } elseif ($_SESSION['type'] === 'teacher' || $_SESSION['type'] === 'admin') {
             header("Location: teacher.php");
             exit();
         }
@@ -78,7 +78,7 @@ $dbname = "academic_records";
                 <tr>
                     <th class="the">Sr No.</th>
                     <th class="the">Title</th>
-                    <?php if ($_SESSION['type'] == 'teacher'): ?>
+                    <?php if ($_SESSION['type'] == 'teacher' || $_SESSION['type'] == 'admin'): ?>
                         <th class="the">Upload Date</th>
                         <th class="the">Faculty Name</th>
                         <!-- <th class="the">Upload File</th> -->
@@ -94,7 +94,7 @@ $dbname = "academic_records";
                     <tr>
                         <td data-label="Sr No."><?php echo $counter; ?></td>
                         <td>MEOW</td>
-                        <?php if ($_SESSION['type'] == 'teacher'): ?>
+                        <?php if ($_SESSION['type'] == 'teacher' || $_SESSION['type'] == 'admin'): ?>
                             <td data-label="Upload Date"><?php echo $uploadDate; ?></td>
                             <td data-label="Faculty Name"><?php echo $facultyName; ?></td>
                             <!-- <td data-label="Upload File">
@@ -118,7 +118,7 @@ $dbname = "academic_records";
     </div>
 </div>
 
-<?php if ($_SESSION['type'] == 'teacher'): ?>
+<?php if ($_SESSION['type'] == 'teacher' || $_SESSION['type'] == 'admin'): ?>
 <div class="upload-delete-container">
     <div class="upload">
         <button type="button" class="collapsible">UPLOAD FILES</button>
@@ -141,22 +141,44 @@ $dbname = "academic_records";
                     <select id="referrer" name="referrer">
                         <option value="">Select one</option>
                         <?php
+                        if($_SESSION['type'] == 'teacher')
+                        {
                         // Retrieve files based on faculty name, year, subject, etc.
-                        $facultyName = $_SESSION['username'];
-                        $year = $_SESSION['year'];
-                        $semester = $_SESSION['semester'];
-                        $branch = $_SESSION['branch'];
-                        $subject = $_SESSION['subject'];
+                            $facultyName = $_SESSION['username'];
+                            $year = $_SESSION['year'];
+                            $semester = $_SESSION['semester'];
+                            $branch = $_SESSION['branch'];
+                            $subject = $_SESSION['subject'];
+                            $type= $_SESSION['type'];
 
-                        $stmt = $conn->prepare("SELECT title FROM linksdata WHERE faculty_name = ? AND year = ? AND semester = ? AND branch = ? AND subject = ?");
-                        $stmt->bind_param("sssss", $facultyName, $year, $semester, $branch, $subject);
-                        $stmt->execute();
-                        $result = $stmt->get_result();
+                            $stmt = $conn->prepare("SELECT title FROM linksdata WHERE faculty_name = ? AND year = ? AND semester = ? AND branch = ? AND subject = ?");
+                            $stmt->bind_param("sssss", $facultyName, $year, $semester, $branch, $subject);
+                            $stmt->execute();
+                            $result = $stmt->get_result();
 
-                        // Generate options based on the retrieved files
-                        while ($row = $result->fetch_assoc()) {
-                            $title = $row['title'];
-                            echo "<option value='$link'>$title</option>";
+                            // Generate options based on the retrieved files
+                            while ($row = $result->fetch_assoc()) {
+                                $title = $row['title'];
+                                echo "<option value='$link'>$title</option>";
+                            }
+                        }
+                        elseif($_SESSION['type'] == 'admin')
+                        {
+                            $year = $_SESSION['year'];
+                            $semester = $_SESSION['semester'];
+                            $branch = $_SESSION['branch'];
+                            $subject = $_SESSION['subject'];
+                            $type= $_SESSION['type'];
+                            $stmt = $conn->prepare("SELECT title FROM linksdata WHERE year = ? AND semester = ? AND branch = ? AND subject = ?");
+                            $stmt->bind_param("ssss", $year, $semester, $branch, $subject);
+                            $stmt->execute();
+                            $result = $stmt->get_result();
+
+                            // Generate options based on the retrieved files
+                            while ($row = $result->fetch_assoc()) {
+                                $title = $row['title'];
+                                echo "<option value='$link'>$title</option>";
+                            }
                         }
 
                         $stmt->close();
@@ -196,7 +218,7 @@ $dbname = "academic_records";
     // Check if the form was submitted
    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['upload'])){
     // Handle file upload logic
-    if ($_SESSION['type'] === 'teacher') {
+    if ($_SESSION['type'] === 'teacher' || $_SESSION['type'] == 'admin') {
         // Check if a file was uploaded
 		
         if (isset($_FILES['file_upload']) && $_FILES['file_upload']['error'] === UPLOAD_ERR_OK) {
@@ -213,7 +235,14 @@ $dbname = "academic_records";
 
                 $link = $link = 'Academic_Records/linksdata/' . $fileName;
 $date = date('Y-m-d');
-$facultyName = $_SESSION['username'];
+if($_SESSION['type'] == 'admin')
+{
+    $facultyName = 'Admin';
+}
+elseif($_SESSION['type'] === 'teacher')
+{
+    $facultyName = $_SESSION['username'];
+}
 $subject = $_SESSION['subject'];
 $branch=$_SESSION['branch'];
 $option=$_SESSION['option'];
