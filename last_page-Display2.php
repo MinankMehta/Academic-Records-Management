@@ -54,7 +54,7 @@ $dbname = "academic_records";
     $stmt->execute();
     
     // Bind the result variables
-    $stmt->bind_result($id, $link, $uploadDate, $facultyName);
+    $stmt->bind_result($id, $link, $uploadDate, $facultyName,$title);
     
     $counter = 1;
 ?>
