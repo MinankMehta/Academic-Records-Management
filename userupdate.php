@@ -34,10 +34,11 @@ if (isset( $_POST["snoEdit"])){
     $sno = $_POST["snoEdit"];
     $Emailid = $_POST["titleEdit"];
     $Password = $_POST["descriptionEdit"];
+    $Name = $_POST["name1Edit"];
     $Type = $_POST["type1Edit"];
 
   // Sql query to be executed
-  $sql = "UPDATE `userdata` SET `Emailid` = '$Emailid', `Password` = '$Password', `Type` = '$Type' WHERE `userdata`.`sno` = $sno";
+  $sql = "UPDATE `userdata` SET `Emailid` = '$Emailid', `Password` = '$Password', `Type` = '$Type' , `name` = '$Name'  WHERE `userdata`.`sno` = $sno";
   $result = mysqli_query($conn, $sql);
   if($result){
     $update = true;
@@ -49,10 +50,11 @@ else{
 else{
     $Emailid = $_POST["title"];
     $Password = $_POST["description"];
+    $Name = $_POST["name1"];
     $Type = $_POST["type1"];
 
   // Sql query to be executed
-  $sql = "INSERT INTO `userdata` (`Emailid`, `Password`, `Type`) VALUES ('$Emailid', '$Password', '$Type')";
+  $sql = "INSERT INTO `userdata` (`Emailid`, `Password`, `Type`, `name`) VALUES ('$Emailid', '$Password', '$Type', '$Name')";
   $result = mysqli_query($conn, $sql);
 
    
@@ -253,11 +255,15 @@ textarea{
               <label for="desc" class="notedesc">Password</label>
               <textarea class="form-control" id="descriptionEdit" name="descriptionEdit"rows="1" ></textarea>
             </div> 
-
+            <div class="form-group">
+              <label for="desc" class="notedesc">Name</label>
+              <textarea class="form-control" id="name1Edit" name="name1Edit" rows="1" ></textarea>
+            </div> 
             <div class="form-group">
               <label for="desc" class="notedesc">Type(teacher/admin/student)</label>
               <textarea class="form-control" id="type1Edit" name="type1Edit" rows="1" ></textarea>
             </div> 
+            
           </div>
           <div class="modal-footer d-block mr-auto">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -344,6 +350,11 @@ textarea{
       </div>
 
       <div class="form-group">
+        <label for="title" class="notetitle">Name</label>
+        <input type="text" class="form-control" id="name1" name="name1">
+      </div>
+
+      <div class="form-group">
         <label for="title" class="notetitle">Type (teacher/admin/student)</label>
         <input type="text" class="form-control" id="type1" name="type1">
       </div>
@@ -360,6 +371,7 @@ textarea{
           <th scope="col">S.No</th>
           <th scope="col">Email</th>
           <th scope="col">Password</th>
+          <th scope="col">Name</th>
           <th scope="col">Type</th>
           <th scope="col">Actions</th>
         </tr>
@@ -375,6 +387,7 @@ textarea{
             <th scope='row'>". $sno . "</th>
             <td>". $row['Emailid'] . "</td>
             <td>". $row['Password'] . "</td>
+            <td>". $row['name'] . "</td>
             <td>". $row['Type'] . "</td>
             <td><button class='edit btn btn-sm btn-primary editbtn' id=".$row['sno'].">Edit</button> <button class='delete btn btn-sm btn-primary delbtn' id=d".$row['sno'].">Delete</button>  </td>
           </tr>";
