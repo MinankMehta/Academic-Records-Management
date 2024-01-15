@@ -28,7 +28,9 @@
         }
     }
 
-
+    $semester = $_SESSION["semester"];
+    $branch = $_SESSION["branch"];
+    $year = $_SESSION["year"];
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -70,12 +72,20 @@ $dbname = "academic_records";
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <title>RECORDS</title>
 </head>
+
+<div class="arm" style="font-family: serif; font-size: 20px; padding-top:20px; padding-left:20px;"><div style="font-size: 65px;font-family: serif; margin-top:-16px; margin-right:-4px;">A</div>cademic Records<br> Management System</div>
+
 <body>
 <div class="container">
     <div class="table-container">
         <!-- <table class="table"> -->
         <table>
             <thead>
+                <div class="gatewaytitle"><?php echo "".$_SESSION['subject']; ?>
+        <br></div>
+        <div class="tit">
+        <?php echo "Semester ".$semester."-".$branch."-".$year; ?>
+    </div>
                 <tr>
                     <th class="the">Sr No.</th>
                     <th class="the">Title</th>

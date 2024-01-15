@@ -29,6 +29,9 @@
         <title>Gateway</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 	<style>
 		.drop li {
     padding: 0.6em 0.5em;
@@ -51,9 +54,14 @@
 }
 </style>
     </head>
+    <div style="font-family: serif; font-size: 65px; color:white; margin-top:25px; margin-left:35px; "> A</div>
+<div class="arm" style=" font-family: serif; font-size: 20px; color:white; margin-top:-58px; margin-left:77px;">cademic Records<br> Management System</div>
+
     <body class="img">
        <form method="post" name="gateway" onsubmit="return ValidationForm2()">
-    <div class="main">
+       <div class="gatewaytitle" style="font-size: 30px;">Select the required details</div>
+       <div class="main" style="margin-top: 8%;">
+        <!-- <h6>Select the required details<br><br><br><br></h6> -->
         <div class="sem">
             <div class="select">
                 <span class="highlight">Semester</span>
@@ -175,7 +183,7 @@
             </ul>
         </div>
     </div>
-    <button type="submit" class="enterbtn">Enter</button>
+    <button type="submit" class="enterbtn" style="margin-top: -3%;">Enter</button>
 </form>
 
         <footer>

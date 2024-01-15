@@ -32,6 +32,11 @@
         exit();
         
     }
+
+    $semester = $_SESSION["semester"];
+    $branch = $_SESSION["branch"];
+    $year = $_SESSION["year"];
+    $sub = $_SESSION['subject'];
 ?>
 
 <!DOCTYPE html>
@@ -44,9 +49,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <title>RECORDS</title>
 </head>
+<div class="arm" style="font-family: serif; font-size: 20px; padding-top:20px; padding-left:20px;"><div style="font-size: 65px;font-family: serif; margin-top:-16px; margin-right:-4px;">A</div>cademic Records<br> Management System</div>
 <body>
 <div class="container">
     <div class="inner-container">
+    <form method="POST">
+    <div class="gatewaytitle">Records<br></div>
+    <div class="tit">
+        <?php echo "Semester ".$semester."-".$branch." ".$year." <br>".$sub; ?>
+    </div>
+            <!-- <input type="hidden" name="option" value="IA_Structure">
+            <button type="submit" class="record" disabled>Records</button> -->
+        </form>
         <form method="POST">
             <input type="hidden" name="option" value="IA_Structure">
             <button type="submit" class="record">IA-Structure</button>

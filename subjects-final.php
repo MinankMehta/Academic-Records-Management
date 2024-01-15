@@ -40,10 +40,20 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
     <title>Subjects</title>
 </head>
+<div style="font-family: serif; font-size: 65px; color:white; margin-top:25px; margin-left:35px; "> A</div>
+<div class="arm" style=" font-family: serif; font-size: 20px; color:white; margin-top:-58px; margin-left:77px;">cademic Records<br> Management System</div>
+
 <body class="img">
+    
     <section class="home">
+    <div class="gatewaytitle">Select a subject
+        <br></div>
+        <div class="tit">
+        <?php echo "Semester ".$semester."-".$branch."-".$year; ?>
+    </div>
         <div class="centre-container">
             <ul class="flex-container">
+                
                 <?php
                 if (mysqli_num_rows($result) > 0) 
                 {

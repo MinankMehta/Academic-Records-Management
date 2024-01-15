@@ -93,6 +93,19 @@ background-size: cover;
 background-position: center;
 }
 
+.arm{
+    font-family: 'Marcellus';
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-size:35px;
+    display:fixed;
+    margin-top: 100px;
+    margin-left: 20px;
+    /* padding-bottom: 4%; */
+    color:#ffffff;
+    font-style: bold;
+    top: 10%;
+}
+
 /* Form */
 .form_container {
 position: fixed;
@@ -191,10 +204,11 @@ color:#ffffff;
                                                 /* second page css*/
 .gatewaytitle{
     font-family: 'Marcellus';
-    font-size:40px;
+    font-size:25px;
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 25px;
+    padding-top: 4%;
     color:#ffffff;
     font-style: bold;
 }
@@ -206,6 +220,7 @@ color:#ffffff;
     flex-wrap: wrap;
     margin:12% 10%;
     margin-bottom:7.3%;
+    padding-right: 20px;
 }
 
 .highlight{
@@ -213,10 +228,14 @@ color:#ffffff;
     font-size: 20px;;
 }
 
-.sem,.branch,.pastyear{
+.sem, .branch, .pastyear{
     min-width: 15em;
     position:relative;
-    margin:2em;
+    /* margin:2em; */
+    /* align-items: center; */
+    margin: -7% auto 0 auto;
+    /* text-align: center;
+    justify-content: center; */
     
 }
 

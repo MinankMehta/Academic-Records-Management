@@ -8,6 +8,7 @@
     box-sizing: border-box;
     font-family: 'Fira Sans', sans-serif;
     font-weight: 2000;   
+    color: #ffffff;
 }
 
 .img{
@@ -92,7 +93,7 @@ background-position: center;
 }
 
 .centre-container{
-  margin-top: 200px;
+  margin-top: 150px;
 }
 .flex-container {
     display: flex;
@@ -132,4 +133,27 @@ background-position: center;
 }
 .flex-item a:hover{
     color: #ffffff;
+}
+
+.gatewaytitle{
+    font-family: 'Marcellus';
+    font-size:35px;
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+    padding-top: 1%;
+    margin-bottom: -5%;
+    color:#ffffff;
+    font-style: bold;
+}
+.tit{
+    font-family: 'Marcellus';
+    font-size:25px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-top: 4%;
+    margin-bottom: -5%;
+    color:#ffffff;
+    font-style: bold;
 }

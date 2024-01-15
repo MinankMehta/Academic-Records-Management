@@ -8,6 +8,7 @@
     font-family: 'Fira Sans', sans-serif;
     font-weight: 2000;   
     box-sizing: border-box;
+    color: #ffffff;
 }
 
 body{
@@ -82,9 +83,6 @@ footer{
 }
 
 
-
-
-
 .container {
     background-color: #b7202e;
     position: relative;
@@ -100,7 +98,8 @@ footer{
     display: flex;
     margin: 10vh;
     justify-content: center;
-    bottom: 7%;
+    bottom: 8%;
+    left:10%;
 }
 
 .table-container{
@@ -358,4 +357,38 @@ input[type=text]{
 
 .content2 select{
     font-size: 2vh;
+}
+
+.gatewaytitle{
+    font-family: 'Marcellus';
+    font-size:25px;
+    display: block;
+    text-align: center;
+    color:#ffffff;
+    font-style: bold;
+}
+
+
+.tit{
+    font-family: 'Marcellus';
+    font-size:18px;
+    display: block;
+    text-align: center;
+    color:#ffffff;
+    font-style: bold;
+}
+
+.arm{
+    margin-left: -450px;
+    margin-right: -65px;
+    margin-top: -38%;
+    display: flex;
+}
+.arm2{
+    /* margin-left: -322px; */
+    margin-right: 250px;
+    margin-top: -40%;
+    display: flex;
+    font-size: 20px;
+    font-family: serif;
 }
