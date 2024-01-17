@@ -73,7 +73,7 @@ $dbname = "academic_records";
     <title>RECORDS</title>
 </head>
 
-<div class="arm" style="font-family: serif; font-size: 20px; padding-top:20px; padding-left:20px;"><div style="font-size: 65px;font-family: serif; margin-top:-16px; margin-right:-4px;">A</div>cademic Records<br> Management System</div>
+<!-- <div class="arm" style="font-family: serif; font-size: 20px; padding-top:20px; padding-left:20px;"><div style="font-size: 65px;font-family: serif; margin-top:-16px; margin-right:-4px;">A</div>cademic Records<br> Management System</div> -->
 
 <body>
 <div class="container">

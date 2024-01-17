@@ -16,12 +16,16 @@ if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin'] || $_SESSION['type']
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <title>Admin Dashboard</title>
 </head>
+<div style="font-family: serif; font-size: 65px; color:white; margin-top:25px; margin-left:35px; "> A</div>
+<div class="arm" style=" font-family: serif; font-size: 20px; color:white; margin-top:-58px; margin-left:77px;">cademic Records<br> Management System</div>
+
 <body class="img">
     <h1 class="admintitle">Admin Page</h1>
     <!-- <br><br> -->
     <div class="updatebtn">
         <button class="userup" onclick="window.location.href='userupdate.php'">User Update</button>
         <button class="pdfup" onclick="window.location.href='secondpage(gateway_pg).php'">PDF Update</button>
+        <button class="syllup" onclick="window.location.href='syllabusupdate.php'">Syllabus Update</button>
     </div>
     
     
