@@ -306,7 +306,7 @@ COMMIT;
 ALTER TABLE `userdata` ADD COLUMN `sno` int AUTO_INCREMENT PRIMARY KEY;
 
 INSERT INTO `subjectdata` (`Semester`, `Branch`, `Subject`, `Year`) VALUES
-(5, 'MECH', Theory of Machines-II', 2023),
+(5, 'MECH', 'Theory of Machines-II', 2023),
 (5, 'MECH', 'Energy Conversion-I', 2023),
 (5, 'MECH', 'Mechatronics', 2023),
 (5, 'MECH', 'Departmental Elective-I', 2023),
@@ -487,7 +487,7 @@ INSERT INTO `subjectdata` (`Semester`, `Branch`, `Subject`, `Year`) VALUES
 (4, 'MECH', 'Production Engineering-II', 2022),
 (4, 'MECH', 'Heat and Mass Transfer', 2022),
 (4, 'MECH', 'Machine Shop practice-II', 2022),
-(5, 'MECH', Theory of Machines-II', 2022),
+(5, 'MECH', 'Theory of Machines-II', 2022),
 (5, 'MECH', 'Energy Conversion-I', 2022),
 (5, 'MECH', 'Mechatronics', 2022),
 (5, 'MECH', 'Departmental Elective-I', 2022),
