@@ -228,8 +228,7 @@ textarea{
 </style>
 
 </head>
-<div style="font-family: serif; font-size: 65px; color:black; margin-top:15px; margin-left:35px; "> A</div>
-<div class="arm" style=" font-family: serif; font-size: 20px; color:black; margin-top:-81px; margin-left:77px; padding-bottom:-15px;">cademic Records<br> Management System</div>
+
 
 <body class="img">
  

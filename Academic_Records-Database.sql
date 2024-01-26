@@ -502,3 +502,5 @@ INSERT INTO `subjectdata` (`Semester`, `Branch`, `Subject`, `Year`) VALUES
 (6, 'MECH', 'Open Elective Management', 2022),
 (6, 'MECH', 'Mini Project', 2022),
 (6, 'MECH', 'MNCC-Business Communication', 2022);
+
+ALTER TABLE `subjectdata` ADD COLUMN `sno` int AUTO_INCREMENT PRIMARY KEY;

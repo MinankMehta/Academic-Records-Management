@@ -23,9 +23,10 @@ if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin'] || $_SESSION['type']
     <h1 class="admintitle">Admin Page</h1>
     <!-- <br><br> -->
     <div class="updatebtn">
-        <button class="userup" onclick="window.location.href='userupdate.php'">User Update</button>
+        <button class="userup" onclick="window.location.href='userupdatechoice.php'">User Update</button>
         <button class="pdfup" onclick="window.location.href='secondpage(gateway_pg).php'">PDF Update</button>
-        <button class="syllup" onclick="window.location.href='syllabusupdate.php'">Syllabus Update</button>
+        <button class="syllup" onclick="window.location.href='syllabusupdatechoice.php'">Syllabus Update</button>
+        <button class="userup" onclick="window.location.href='userupdate.php'">Report</button>
     </div>
     
     

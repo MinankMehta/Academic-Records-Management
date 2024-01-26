@@ -442,11 +442,13 @@ textarea{
         tr = e.target.parentNode.parentNode;
         title = tr.getElementsByTagName("td")[0].innerText;
         description = tr.getElementsByTagName("td")[1].innerText;
-        type = tr.getElementsByTagName("td")[2].innerText;
-        console.log(title, description, type);
+        name1 = tr.getElementsByTagName("td")[2].innerText;
+        type1 = tr.getElementsByTagName("td")[3].innerText;
+        console.log(title, description,name1, type1);
         titleEdit.value = title;
         descriptionEdit.value = description;
-        type1Edit.value = type;
+        type1Edit.value = type1;
+        name1Edit.value = name1;
         snoEdit.value = e.target.id;
         console.log(e.target.id)
         $('#editModal').modal('toggle');
