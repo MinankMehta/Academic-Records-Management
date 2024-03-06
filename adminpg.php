@@ -4,6 +4,14 @@ if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin'] || $_SESSION['type']
       header("Location: login.php"); 
       exit();
   }
+  
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['report_button'])) {
+        $_SESSION['redirect_to_report'] = true;
+        header("Location: secondpage(gateway_pg).php");
+        exit();
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +27,7 @@ if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin'] || $_SESSION['type']
 <div style="font-family: serif; font-size: 65px; color:white; margin-top:25px; margin-left:35px; "> A</div>
 <div class="arm" style=" font-family: serif; font-size: 20px; color:white; margin-top:-58px; margin-left:77px;">cademic Records<br> Management System</div>
 
+
 <body class="img">
     <h1 class="admintitle">Admin Page</h1>
     <!-- <br><br> -->
@@ -26,7 +35,8 @@ if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin'] || $_SESSION['type']
         <button class="userup" onclick="window.location.href='userupdatechoice.php'">User Update</button>
         <button class="pdfup" onclick="window.location.href='secondpage(gateway_pg).php'">PDF Update</button>
         <button class="syllup" onclick="window.location.href='syllabusupdatechoice.php'">Syllabus Update</button>
-        <button class="userup" onclick="window.location.href='userupdate.php'">Report</button>
+        <button class="userup" onclick="window.location.href='report1.php'">Report</button>
+
     </div>
     
     
