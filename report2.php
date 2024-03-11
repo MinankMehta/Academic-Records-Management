@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-	if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
+	if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin'] || $_SESSION['type'] === 'student' || $_SESSION['type'] === 'teacher') {
         header("Location: login.php");
         exit();
     }
@@ -79,7 +79,6 @@
                         // } else {
                         //     header("Location: teacher.php"); // Redirect to the admin.php page for other user types
                         // }
-                        exit();
                     }
                 ?>
             </ul>

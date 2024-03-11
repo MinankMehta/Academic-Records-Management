@@ -4,14 +4,6 @@ if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin'] || $_SESSION['type']
       header("Location: login.php"); 
       exit();
   }
-  
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['report_button'])) {
-        $_SESSION['redirect_to_report'] = true;
-        header("Location: secondpage(gateway_pg).php");
-        exit();
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">

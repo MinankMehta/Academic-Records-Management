@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-	if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
+	if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']|| $_SESSION['type'] === 'student' || $_SESSION['type'] === 'teacher') {
         header("Location: login.php");
         exit();
     }

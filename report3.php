@@ -3,7 +3,7 @@
     session_start();
 
 		$serial=1;
-	if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
+	if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin'] || $_SESSION['type'] === 'student' || $_SESSION['type'] === 'teacher') {
         header("Location: login.php"); 
         exit();
     }
@@ -16,27 +16,6 @@
         header("Location: report2.php");
         exit();
     }
-	
-	// if (!isset($_SESSION['option'])) {
-    //     // Check the session type
-    //     if ($_SESSION['type'] === 'student') {
-    //         header("Location: student.php");
-    //         exit();
-    //     } elseif ($_SESSION['type'] === 'teacher') {
-    //         header("Location: teacher.php");
-    //         exit();
-    //     } elseif ($_SESSION['type'] === 'admin') {
-    //         header("Location: report3.php");
-    //         exit();
-    //     }
-    // }
-    // if (!isset($_SESSION['option'])) {
-    //     // Check the session type
-    //     if ($_SESSION['type'] === 'admin') {
-    //         header("Location: report3.php");
-    //         exit();
-    //     }
-    // }
 
     $semester = $_SESSION["semester"];
     $branch = $_SESSION["branch"];
@@ -250,11 +229,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
             echo "Error: File not found.";
         }
     }
-?><script>
-  
-    window.location.href = window.location.href;
-  
-</script>
-<?php
 }
 ?>
